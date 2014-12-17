@@ -1,0 +1,68 @@
+@font-face
+  font-family: Russia
+  src: font-url('VxnLX3Xo.ttf') format('truetype'), font-url('XbIBGcIa.ttf') format('truetype')
+
+  font-weight: normal
+  font-style: normal
+
+body
+  font-family: 'Russia'
+
+.selfie_wrapper
+  background-color: white
+  width: 1200px
+  margin: 0 auto
+
+  .header
+    background-color: #000
+    +clearfix
+    padding: 20px
+
+    a
+      text-decoration: none
+
+    .logo
+      float: left
+      color: white
+
+    ul
+      float: right
+      +clearfix
+
+      li
+        float: left
+        margin-right: 40px
+
+        a
+          color: white
+
+  .order
+    width: 1000px
+    margin: 0 auto
+
+    .order_text
+      width: 60%
+      margin: 50px 0 0 40px
+
+      h1
+        font-size: 32px
+        font-weight: bold
+
+      ul
+        margin: 35px 0 0 17px
+
+        li
+          font-size: 16px
+          margin-bottom: 15px
+
+          &:before
+            display: block
+            content: " "
+            float: left
+            width: 0
+            height: 0
+            border-color: transparent
+            border-style: solid
+            border-width: 5px 0 5px 8px
+            border-left-color: #ff4d00
+            margin: 1px 0 0 -15px
