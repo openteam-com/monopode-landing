@@ -10,83 +10,110 @@ body
 
 .selfie_wrapper
   background-color: white
-  width: 1200px
-  margin: 0 auto
 
-  .header
-    background-color: #000
-    +clearfix
-    padding: 20px
+  .content
+    li.zebra
+      background-color: #000
 
-    a
-      text-decoration: none
+      &:nth-child(even)
+        background-color: #fff
 
-    .logo
-      float: left
-      color: white
+      > div
+        width: 1200px
+        margin: 0 auto
 
-    ul
-      float: right
+    .header
       +clearfix
+      padding: 20px 0
 
-      li
+      a
+        text-decoration: none
+
+      .logo
         float: left
-        margin-right: 40px
-
-        a
-          color: white
-
-  .order
-    width: 1000px
-    margin: 0 auto
-
-    .order_text
-      width: 60%
-      margin: 50px 0 0 40px
-
-      h1
-        font-size: 32px
-        font-weight: bold
+        color: white
 
       ul
-        margin: 35px 0 0 17px
+        float: right
+        +clearfix
 
         li
-          font-size: 16px
-          margin-bottom: 15px
+          float: left
+          margin-right: 40px
 
-          &:before
-            display: block
-            content: " "
-            float: left
-            width: 0
-            height: 0
-            border-color: transparent
-            border-style: solid
-            border-width: 5px 0 5px 8px
-            border-left-color: #ff4d00
-            margin: 1px 0 0 -15px
-  .photo
-    background-color: black
+          a
+            color: white
 
-    h1
-      color: white
-      font-size: 28px
+    .order
+      width: 1000px
       margin: 0 auto
-      padding: 10px 0
-      width: 400px
 
-    .jcarousel
+      .order_text
+        width: 60%
+        margin: 50px 0 0 40px
+
+        h1
+          font-size: 32px
+          font-weight: bold
+
+        ul
+          margin: 35px 0 0 17px
+
+          li
+            font-size: 16px
+            margin-bottom: 15px
+
+            &:before
+              display: block
+              content: " "
+              float: left
+              width: 0
+              height: 0
+              border-color: transparent
+              border-style: solid
+              border-width: 5px 0 5px 8px
+              border-left-color: #ff4d00
+              margin: 1px 0 0 -15px
+    .photo
       position: relative
-      overflow: hidden
 
-      ul
-        width: 20000em
+      h1
+        color: white
+        font-size: 28px
+        margin: 0 auto
+        padding: 10px 0
+        width: 400px
+
+      .jcarousel-control-prev, .jcarousel-control-next
+        position: absolute
+        top: 157px
+        width: 30px
+        height: 30px
+        text-align: center
+        color: #fff
+        text-decoration: none
+        font: 80px/27px Arial, sans-serif
+
+      .jcarousel-control-next
+        right: 0px
+
+      .jcarousel
         position: relative
-        list-style: none
-        margin: 0
-        padding: 0
+        overflow: hidden
+        width: 1100px
+        margin: 0 auto
 
-      li
-        width: 600px
-        float: left
+        ul
+          list-style: none
+          margin: 0
+          padding: 0
+          position: relative
+          width: 20000em
+
+        li
+          +border-radius(5px)
+          border: 10px solid white
+          float: left
+          height: 230px
+          margin: 0 30px 0 0
+          width: 230px
