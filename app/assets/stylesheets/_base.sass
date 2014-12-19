@@ -126,6 +126,47 @@ h1
       width: 45%
       padding: 20px 0 0 40px
 
+  .order_button
+    background-color: #eaeaea
+    float: right
+    margin: 0 37px
+    width: 470px
+
+    .button
+      margin: 0 auto
+      width: 400px
+
+    .new_price, .old_price
+      +inline-block
+      float: left
+      padding-left: 50px
+
+      span
+        vertical-align: super
+
+    .new_price
+      font-size: 44px
+
+      span
+        font-size: 24px
+
+    .old_price
+      font-size: 24px
+      position: relative
+
+      &:after
+        border-top: 1px solid red
+        content: ""
+        left: 23px
+        position: absolute
+        right: 0
+        top: 46%
+        transform: rotate(-19deg)
+        width: 79%
+
+      span
+        font-size: 16px
+
   .photo
     position: relative
 
@@ -270,21 +311,21 @@ h1
       margin: 18px 0 0 50px
 
       .new_price
+        +inline-block
         color: #fc0025
+        float: left
         font-size: 34px
         margin-bottom: 10px
-        +inline-block
-        float: left
 
         span
           font-size: 24px
           vertical-align: super
 
       .old_price
-        clear: both
         +inline-block
-        font-size: 26px
+        clear: both
         float: left
+        font-size: 26px
         position: relative
 
         &:after
@@ -309,7 +350,7 @@ h1
 
     a
       background: image-url('vk.png') no-repeat left center
+      color: #0055d6
       font-size: 20px
       padding: 30px 0 20px 65px
       text-decoration: none
-      color: #0055d6
