@@ -132,10 +132,6 @@ h1
     margin: 0 37px
     width: 470px
 
-    .button
-      margin: 0 auto
-      width: 400px
-
     .new_price, .old_price
       +inline-block
       float: left
@@ -211,22 +207,45 @@ h1
       width: 770px
 
   .tech_details
-    padding: 30px 0 100px
-    background: image-url("how_it_works.jpg") no-repeat left bottom
     +clearfix
+    background: image-url("how_it_works.jpg") no-repeat left bottom
+    padding: 30px 0 0 0
+    position: relative
 
     h1
       padding: 0 0 40px 0
 
+    .monopode_text, .phone_text, .bracket_text
+      position: absolute
+      font-size: 13px
+      white-space: pre
+
+    .monopode_text
+      left: 7px
+      top: 192px
+
+    .phone_text
+      bottom: 33px
+      left: 20px
+
+    .bracket_text
+      bottom: 60px
+      left: 436px
+
     .caption
-      color: #ff4200
-      font-weight: bold
-      font-size: 20px
-      background: white
-      padding: 8px
-      margin: 0 -10px 0 0
-      border: 3px solid white
       +border-radius(10px)
+      background: white
+      border: 3px solid white
+      color: #ff4200
+      display: table-cell
+      font-size: 20px
+      font-weight: bold
+      margin: 0 -10px 0 0
+      padding: 8px
+
+      span
+        display: table-cell
+        padding-top: 4px
 
     .right_block
       float: right
