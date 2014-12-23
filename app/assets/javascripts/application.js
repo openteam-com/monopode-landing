@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.plugin.min
-//= require jquery.countdown.min
+//= require plugins/jquery.plugin.min
+//= require plugins/jquery.countdown.min
 //= require_tree .

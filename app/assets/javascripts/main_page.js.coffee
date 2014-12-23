@@ -26,3 +26,15 @@ $ ->
     selected = $(this).attr("href")
     $.scrollTo selected, 750
     false
+
+  $('.plus').click ->
+    number = $('.number').text().trim()
+    number = parseInt(number)
+    number += 1
+    $('.number').empty().text(number)
+
+  $('.minus').click ->
+    number = $('.number').text().trim()
+    number = parseInt(number)
+    number -= 1
+    $('.number').empty().text(number)
