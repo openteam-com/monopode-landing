@@ -22,7 +22,7 @@ $ ->
       maxZoom: 23
       minZoom: 11
 
-  $(".menu li a").click ->
+  $(".js-scroll").click ->
     selected = $(this).attr("href")
     $.scrollTo selected, 750
     false

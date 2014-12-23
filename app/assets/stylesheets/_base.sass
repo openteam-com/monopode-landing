@@ -98,6 +98,15 @@ h1
     &.grey
       background-color: #eaeaea
 
+    &.fixed_menu
+      position: fixed
+      top: 0
+      width: 100%
+      z-index: 10
+
+    &.first_block
+      margin-top: 56px
+
     > div
       padding: 30px 0 45px
       width: 1200px
@@ -129,13 +138,16 @@ h1
   .order_button
     background-color: #eaeaea
     float: right
-    margin: 0 37px
+    margin: 0 37px 35px
     width: 470px
+    padding: 30px 0 25px
+    border-bottom-right-radius: 10px
+    border-bottom-left-radius: 10px
 
     .new_price, .old_price
       +inline-block
       float: left
-      padding-left: 50px
+      padding-left: 102px
 
       span
         vertical-align: super
@@ -153,15 +165,19 @@ h1
       &:after
         border-top: 1px solid red
         content: ""
-        left: 23px
+        left: 83px
         position: absolute
         right: 0
         top: 46%
         transform: rotate(-19deg)
-        width: 79%
+        width: 46%
 
       span
         font-size: 16px
+
+    .button
+      margin: 25px auto 0
+      text-transform: uppercase
 
   .photo
     position: relative
@@ -320,9 +336,10 @@ h1
 
   .order_form
     +border-radius(10px)
+    +clearfix
     background: #f2f2f2 image-url('order.jpg') no-repeat
     background-position: 60px 73px
-    padding: 30px 0 340px 0px
+    padding: 30px 0 20px 0
 
     .left
       float: left
@@ -363,6 +380,50 @@ h1
 
     .right
       float: left
+      margin: 30px 0 0 0
+
+      .button
+        float: left
+        margin: 15px 33px
+        padding: 25px 0
+        text-transform: uppercase
+        width: 350px
+
+      .prepayment
+        color: #949494
+        text-transform: uppercase
+
+      .count
+        float: left
+        margin: 20px 0 0 0
+
+        h3
+          color: #939393
+          margin: 0 0 20px 0
+          text-transform: uppercase
+
+        div
+          float: left
+          padding: 5px 10px
+
+        .minus, .plus
+          +border-radius(10px)
+          background-color: #959595
+          color: white
+          cursor: pointer
+          font-size: 30px
+
+        .number
+          font-size: 42px
+
+      .input
+        +border-radius(10px)
+        border: 2px solid #e0e0e0
+        font-size: 18px
+        margin: 5px 0
+        outline: none
+        padding: 10px
+        width: 468px
 
   .zg_link
     padding-bottom: 30px
