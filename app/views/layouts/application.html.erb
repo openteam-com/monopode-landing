@@ -4,6 +4,7 @@
     <title>MonopodeLanding</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag('http://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU') %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -209,9 +210,14 @@
 
       <li class="white">
         <div class="zg_link">
-          <a href='#' class='zg_link'>http://vk.com/selfieznaigorod</a>
+          <a href='http://vk.com/selfieznaigorod' class='zg_link' target='_blank'>http://vk.com/selfieznaigorod</a>
         </div>
       </li>
+
+      <div class='map_wrapper'>
+        <div class='map' data-latitude='56.493246' data-longitude='84.982112'></div>
+      </div>
+
 
       <li class="black">
         <div class="footer">

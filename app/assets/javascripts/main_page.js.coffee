@@ -11,3 +11,13 @@ $ ->
     until: austDay
     format: "DHMS"
 
+  ymaps.ready ->
+    $map = $('.map_wrapper .map')
+    map = new ymaps.Map $map[0],
+      center: [$map.attr('data-latitude'), $map.attr('data-longitude')]
+      zoom: 12
+      behaviors: ['drag', 'scrollZoom']
+      controls: []
+    ,
+      maxZoom: 23
+      minZoom: 11
