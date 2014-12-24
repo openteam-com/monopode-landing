@@ -9,7 +9,7 @@ $ ->
   austDay = new Date(austDay.getFullYear()+1, 1 - 1, 26)
   $(".countdown").countdown
     until: austDay
-    format: "DHMS"
+    format: "dhms"
 
   ymaps.ready ->
     $map = $('.map_wrapper .map')
@@ -39,7 +39,6 @@ $ ->
       position:
         top: 90
         left: 10
-
 
     map.geoObjects.add new ymaps.Placemark [56.4800670145844, 85.00952437484801]
 
