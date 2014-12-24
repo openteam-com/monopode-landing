@@ -8,12 +8,13 @@ class OrdersController < ApplicationController
         render nothing: true and return
         #render js: "window.location.pathname='#{root_path}'"
       else
-        render nothing: true and return
+        render nothing: true, status: 500
       end
     end
   end
 
   private
+
   def order_params
     params.permit(:first_name, :last_name, :email, :quantity, :address)
   end

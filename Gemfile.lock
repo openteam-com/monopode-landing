@@ -27,7 +27,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
     airbrake (3.1.17)
       builder
       multi_json
@@ -79,26 +78,14 @@ GEM
       highline (= 1.5.2)
       multi_json (~> 1.10.1)
     connection_pool (2.1.0)
-    css_parser (1.3.5)
-      addressable
-    enumerize (0.9.0)
-      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.2.2)
     fssm (0.2.10)
-    has_scope (0.6.0.rc)
-      actionpack (>= 3.2, < 5)
-      activesupport (>= 3.2, < 5)
     highline (1.5.2)
     hike (1.2.3)
     hirb (0.7.2)
     hitimes (1.2.2)
     i18n (0.6.11)
-    inherited_resources (1.5.1)
-      actionpack (>= 3.2, < 4.2)
-      has_scope (~> 0.6.0.rc)
-      railties (>= 3.2, < 4.2)
-      responders (~> 1.0)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -110,14 +97,12 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
-    mini_portile (0.6.1)
     minitest (5.5.0)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.5)
-      mini_portile (~> 0.6.0)
     openteam-capistrano (1.0.11)
       airbrake (~> 3.1.16)
       capistrano (~> 3.1)
@@ -128,8 +113,6 @@ GEM
       capistrano3-unicorn
     pg (0.17.1)
     rack (1.5.2)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.8)
@@ -152,13 +135,9 @@ GEM
     redis (3.2.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
-    responders (1.1.2)
-      railties (>= 3.2, < 4.2)
-    roadie (2.4.3)
-      actionmailer (> 3.0.0, < 5.0.0)
-      css_parser (~> 1.3.4)
-      nokogiri (> 1.5.0)
-      sprockets
+    rubykassa (0.4.2)
+      multi_xml
+      rails (>= 3.2.18)
     russian (0.6.0)
       i18n (>= 0.5.0)
     sass (3.2.19)
@@ -173,15 +152,6 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    simple_captcha2 (0.3.2)
-      rails (>= 4.1)
-    simple_form (3.1.0)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
-    sinatra (1.4.5)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -220,21 +190,15 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails
   configliere
-  enumerize
   hirb
-  inherited_resources
   jbuilder (~> 2.0)
   jquery-rails
   openteam-capistrano (~> 1.0.7)
   pg
   rails (~> 4.1.8)
-  roadie (~> 2.4)
+  rubykassa
   russian
   sass-rails (~> 4.0.3)
-  sidekiq
-  simple_captcha2
-  simple_form
-  sinatra
   spring
   uglifier (>= 1.3.0)
   unicorn

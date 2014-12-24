@@ -59,12 +59,14 @@ $ ->
     number -= 1
     $('.number').empty().text(number)
 
-  $('.js-open-form').click ->
+  $('.js-open-form').click (e) ->
     toggleForm()
+    e.preventDefault()
     return
 
-  $('.js-return-old-form').click ->
+  $('.js-return-old-form').click (e) ->
     toggleForm()
+    e.preventDefault()
     return
 
   $('.js-select-city').change ->

@@ -1,6 +1,7 @@
 $ ->
-  $(".js-send-form").click ->
+  $(".js-send-form").click (e) ->
     perform_ajax()
+    e.preventDefault()
 
 
 perform_ajax = ->
@@ -17,3 +18,6 @@ perform_ajax = ->
     success: ->
       $('.js-send-form').prop('disabled', true)
       $('.js-send-form').addClass('disabled')
+
+    error: ->
+      alert 'Произошла ошибка' # TODO: поменять нотификацию ошибок
