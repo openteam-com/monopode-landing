@@ -60,14 +60,16 @@ $ ->
     $('.number').empty().text(number)
 
   $('.js-open-form').click (e) ->
-    toggleForm()
+    if is_email($('#email').val())
+      toggleForm()
+    else
+      alert 'email' # TODO: изменить на нотификацию
+
     e.preventDefault()
-    return
 
   $('.js-return-old-form').click (e) ->
     toggleForm()
     e.preventDefault()
-    return
 
   $('.js-select-city').change ->
       $('.annotation').toggle()
@@ -83,3 +85,8 @@ toggleForm = () ->
 
   $('.js-order-button').fadeToggle()
   $('.js-order-button').css('display', 'block')
+
+is_email = (email) ->
+  regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+
+  regex.test email
