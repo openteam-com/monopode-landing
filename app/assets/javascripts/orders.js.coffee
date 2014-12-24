@@ -6,7 +6,7 @@ $ ->
 perform_ajax = ->
   $.ajax
     type: 'post'
-    url: '/manage/orders'
+    url: '/orders'
     data: {
       first_name: $("#first_name").val(),
       last_name: $("#last_name").val(),

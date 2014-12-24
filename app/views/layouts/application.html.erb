@@ -7,7 +7,6 @@
     <%= javascript_include_tag('http://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU') %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
     <ul class="content">
       <li class='black fixed_menu'>
@@ -220,7 +219,7 @@
               <%= text_field_tag :last_name, '', class: 'input', placeholder: 'Фамилия' %>
             </div>
             <div>
-              <%= text_field_tag :email, '', class: 'input', placeholder: 'E-mail'%>
+              <%= email_field_tag :email, '', class: 'input', placeholder: 'E-mail'%>
             </div>
             <div class="count">
               <h3>Количество</h3>
@@ -255,10 +254,9 @@
             <div>
               <%= text_field_tag :address, '', class: 'input', placeholder: 'Введите адрес доставки'%>
             </div>
-            <a href='javascript:void(0)' class='button js-send-form'>отправить заказ</a>
           </div>
           <div style='clear: both'></div>
-          <a href='javascript:void(0)' class='button js-order-button new_button'>заказать</a>
+          <a href='javascript:void(0)' class='button js-order-button js-send-form new_button'>заказать</a>
         </div>
       </li>
 
