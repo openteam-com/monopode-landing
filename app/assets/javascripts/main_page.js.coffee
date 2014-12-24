@@ -68,4 +68,10 @@ $ ->
 
     $('.order_form').css('background', '#f2f2f2')
 
+    $('.js-order-button').fadeToggle()
+    $('.js-order-button').css('display', 'block')
+
     return
+
+  $('.js-select-city').change ->
+      $('.annotation').toggle()

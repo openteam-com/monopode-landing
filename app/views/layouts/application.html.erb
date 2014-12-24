@@ -208,7 +208,7 @@
 
           <div class="new_left">
             <div>
-              <%= select_tag "credit_card", options_for_select([ "Томск", "Другой город"  ], "Томск"), class: 'input js-select-city' %>
+              <%= select_tag "credit_card", options_for_select([ "Томск", "Другой город"  ], "Томск"), class: 'input js-select-city select' %>
             </div>
           </div>
 
@@ -241,13 +241,20 @@
           </div>
 
           <div class="new_right">
-            Забрать свой заказ самостоятельно Вы можете по адресу:
-            <a href='#map'>Алтайская 163б, стр. 4</a>
-            Либо
+            <div class="annotation">
+              Забрать свой заказ самостоятельно Вы можете по адресу:
+              <a href='#map'>Алтайская 163б, стр. 4</a>
+              <span class='or'>
+                Либо
+              </span>
+            </div>
+
             <div>
               <%= text_field_tag :t1, '', class: 'input', placeholder: 'Введите адрес доставки'%>
             </div>
           </div>
+          <div style='clear: both'></div>
+          <a href='javascript:void(0)' class='button js-order-button new_button'>заказать</a>
         </div>
       </li>
 
