@@ -60,10 +60,26 @@ $ ->
     $('.number').empty().text(number)
 
   $('.js-open-form').click ->
-    $('.left', '.order_form').fadeToggle()
-    $('.right', '.order_form').fadeToggle()
+    toggleForm()
+    return
 
-    $('.new_left', '.order_form').fadeToggle()
-    $('.new_right', '.order_form').fadeToggle()
+  $('.js-return-old-form').click ->
+    toggleForm()
+    return
 
-    $('.order_form').css('background', '#f2f2f2')
+  $('.js-select-city').change ->
+      $('.annotation').toggle()
+
+  $('.order_form').css('background', '#f2f2f2')
+
+toggleForm = () ->
+  $('.left', '.order_form').fadeToggle()
+  $('.right', '.order_form').fadeToggle()
+
+  $('.new_left', '.order_form').fadeToggle()
+  $('.new_right', '.order_form').fadeToggle()
+
+  $('.order_form').css('background', '#f2f2f2')
+
+  $('.js-order-button').fadeToggle()
+  $('.js-order-button').css('display', 'block')
