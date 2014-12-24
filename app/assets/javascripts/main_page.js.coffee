@@ -67,5 +67,3 @@ $ ->
     $('.new_right', '.order_form').fadeToggle()
 
     $('.order_form').css('background', '#f2f2f2')
-
-    return

@@ -214,13 +214,13 @@
 
           <div class='right'>
             <div>
-              <%= text_field_tag :t1, '', class: 'input', placeholder: 'Имя' %>
+              <%= text_field_tag :first_name, '', class: 'input', placeholder: 'Имя' %>
             </div>
             <div>
-              <%= text_field_tag :t1, '', class: 'input', placeholder: 'Фамилия' %>
+              <%= text_field_tag :last_name, '', class: 'input', placeholder: 'Фамилия' %>
             </div>
             <div>
-              <%= text_field_tag :t1, '', class: 'input', placeholder: 'E-mail'%>
+              <%= text_field_tag :email, '', class: 'input', placeholder: 'E-mail'%>
             </div>
             <div class="count">
               <h3>Количество</h3>
@@ -245,8 +245,9 @@
             <a href='#map'>Алтайская 163б, стр. 4</a>
             Либо
             <div>
-              <%= text_field_tag :t1, '', class: 'input', placeholder: 'Введите адрес доставки'%>
+              <%= text_field_tag :address, '', class: 'input', placeholder: 'Введите адрес доставки'%>
             </div>
+            <a href='javascript:void(0)' class='button js-send-form'>отправить заказ</a>
           </div>
         </div>
       </li>
