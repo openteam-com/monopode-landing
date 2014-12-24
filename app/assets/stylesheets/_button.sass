@@ -1,5 +1,7 @@
 .button
   +border-radius(10px)
+  +box-shadow(0 -3px rgb(219, 0, 1) inset)
+  +transition(0.2s)
   background-color: #fc0632
   border: 0
   color: white
@@ -10,9 +12,14 @@
   text-align: center
   text-decoration: none
   width: 400px
-  +box-shadow(0 -3px rgb(219, 0, 1) inset)
-  +transition(0.2s)
 
   &:hover
     background-color: rgb(219, 0, 1)
 
+.disabled
+  background-color: grey
+  +box-shadow(none)
+
+  &:hover
+    background-color: grey
+    cursor: no-drop
