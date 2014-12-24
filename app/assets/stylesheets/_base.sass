@@ -341,7 +341,10 @@ h1
     background-position: 60px 73px
     padding: 30px 0 20px 0
 
-    .left
+    .new_left
+      display: none
+
+    .left, .new_left
       float: left
       width: 590px
       margin: 18px 0 0 50px
@@ -378,7 +381,8 @@ h1
           font-size: 22px
           vertical-align: super
 
-    .right
+
+    .right, .new_right
       float: left
       margin: 30px 0 0 0
 
@@ -415,15 +419,21 @@ h1
 
         .number
           font-size: 42px
+          text-align: center
+          width: 50px
 
-      .input
-        +border-radius(10px)
-        border: 2px solid #e0e0e0
-        font-size: 18px
-        margin: 5px 0
-        outline: none
-        padding: 10px
-        width: 468px
+    .input
+      +border-radius(10px)
+      border: 2px solid #e0e0e0
+      font-size: 18px
+      margin: 5px 0
+      outline: none
+      padding: 10px
+      width: 468px
+
+    .new_right
+      display: none
+      margin: 0
 
   .zg_link
     padding-bottom: 30px

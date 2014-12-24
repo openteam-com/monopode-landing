@@ -58,3 +58,14 @@ $ ->
     number = parseInt(number)
     number -= 1
     $('.number').empty().text(number)
+
+  $('.js-open-form').click ->
+    $('.left', '.order_form').fadeToggle()
+    $('.right', '.order_form').fadeToggle()
+
+    $('.new_left', '.order_form').fadeToggle()
+    $('.new_right', '.order_form').fadeToggle()
+
+    $('.order_form').css('background', '#f2f2f2')
+
+    return

@@ -206,6 +206,12 @@
             </div>
           </div>
 
+          <div class="new_left">
+            <div>
+              <%= select_tag "credit_card", options_for_select([ "Томск", "Другой город"  ], "Томск"), class: 'input js-select-city' %>
+            </div>
+          </div>
+
           <div class='right'>
             <div>
               <%= text_field_tag :t1, '', class: 'input', placeholder: 'Имя' %>
@@ -228,9 +234,18 @@
                 +
               </div>
             </div>
-            <a href='#' class='button js-open-form'>отправить заказ</a>
+            <a href='javascript:void(0)' class='button js-open-form'>отправить заказ</a>
             <div class="prepayment">
               100% предоплата
+            </div>
+          </div>
+
+          <div class="new_right">
+            Забрать свой заказ самостоятельно Вы можете по адресу:
+            <a href='#map'>Алтайская 163б, стр. 4</a>
+            Либо
+            <div>
+              <%= text_field_tag :t1, '', class: 'input', placeholder: 'Введите адрес доставки'%>
             </div>
           </div>
         </div>
@@ -240,6 +255,7 @@
         <div class="zg_link">
           <a href='http://vk.com/selfieznaigorod' class='zg_link' target='_blank'>http://vk.com/selfieznaigorod</a>
         </div>
+        <span id="map"></span>
       </li>
 
       <div class='map_wrapper'>
