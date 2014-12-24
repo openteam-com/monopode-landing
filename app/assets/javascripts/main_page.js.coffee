@@ -70,8 +70,6 @@ $ ->
   $('.js-select-city').change ->
       $('.annotation').toggle()
 
-  $('.order_form').css('background', '#f2f2f2')
-
 toggleForm = () ->
   $('.left', '.order_form').fadeToggle()
   $('.right', '.order_form').fadeToggle()

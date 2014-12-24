@@ -4,8 +4,9 @@ class OrdersController < ApplicationController
       order = Order.new(order_params)
       if order.save
         #robokassa stuff
-        #
+
         render nothing: true and return
+        #render js: "window.location.pathname='#{root_path}'"
       else
         render nothing: true and return
       end
