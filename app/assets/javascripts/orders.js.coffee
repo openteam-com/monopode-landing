@@ -1,8 +1,8 @@
 $ ->
   $(".js-send-form").click (e) ->
+    return false if $('.js-send-form').hasClass('disabled')
     perform_ajax()
     e.preventDefault()
-
 
 perform_ajax = ->
   $.ajax
@@ -19,5 +19,9 @@ perform_ajax = ->
       $('.js-send-form').prop('disabled', true)
       $('.js-send-form').addClass('disabled')
 
+      show_notify('Ваша покупка успешно оформлена!', 'success')
+      hide_notify()
+
     error: ->
-      alert 'Произошла ошибка' # TODO: поменять нотификацию ошибок
+      show_notify('Произошла ошибка. Возможно, заполнены не все поля', 'error')
+      hide_notify()
