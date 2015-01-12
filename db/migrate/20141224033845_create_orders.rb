@@ -4,8 +4,9 @@ class CreateOrders < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.string :quantity
+      t.integer :quantity
       t.string :address
+      t.string :payment_status
       t.timestamps
     end
   end
