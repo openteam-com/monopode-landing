@@ -20,7 +20,10 @@ $ ->
   $('.minus').click ->
     number = $('.number').text().trim()
     number = parseInt(number)
-    number -= 1
+    if number <= 1
+      number = 1
+    else
+      number -= 1
     $('.number').empty().text(number)
 
   $('.js-open-form').click (e) ->
