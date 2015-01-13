@@ -1,7 +1,7 @@
 $ ->
   $(".js-send-form").click (e) ->
     return false if $('.js-send-form').hasClass('disabled')
-    perform_ajax()
+    perform_ajax() if is_email($('#email').val())
     e.preventDefault()
 
   $('body').on 'click', '.js-order-button', ->
@@ -18,6 +18,7 @@ $ ->
 
   $('.js-open-form').click (e) ->
     return false if $('.js-open-form').hasClass('disabled')
+
     if is_email($('#email').val())
       toggleForm()
     else
@@ -26,9 +27,9 @@ $ ->
 
     e.preventDefault()
 
-  $('.js-return-old-form').click (e) ->
-    toggleForm()
-    e.preventDefault()
+  #$('.js-return-old-form').click (e) ->
+    #toggleForm()
+    #e.preventDefault()
 
   $('.js-select-city').change ->
       $('.annotation').toggle()
