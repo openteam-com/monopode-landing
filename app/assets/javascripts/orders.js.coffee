@@ -5,6 +5,7 @@ $ ->
     e.preventDefault()
 
   $('body').on 'click', '.js-order-button', ->
+    return false if $('.js-order-button').hasClass('disabled')
     id = $('.js-order-button').attr('id')
     address = $('#address').val()
     $.ajax
@@ -15,6 +16,9 @@ $ ->
         id: id
         address: address
       }
+
+    $('.js-order-button').attr('disabled', true)
+    $('.js-order-button').addClass('disabled')
 
   $('.js-open-form').click (e) ->
     return false if $('.js-open-form').hasClass('disabled')
