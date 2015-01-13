@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  validates_presence_of :first_name, :last_name, :email, :quantity, :address
+  validates_presence_of :first_name, :last_name, :email, :quantity
 
 end
 

@@ -4,6 +4,35 @@ $ ->
     perform_ajax()
     e.preventDefault()
 
+  $('body').on 'click', '.js-order-button', ->
+    id = $('.js-order-button').attr('id')
+    address = $('#address').val()
+    $.ajax
+      type: 'post'
+      url: "/orders/"+id
+      data: {
+        _method: 'put'
+        id: id
+        address: address
+      }
+
+  $('.js-open-form').click (e) ->
+    return false if $('.js-open-form').hasClass('disabled')
+    if is_email($('#email').val())
+      toggleForm()
+    else
+      show_notify('Неверно заполнено поле e-mail', 'warning')
+      hide_notify()
+
+    e.preventDefault()
+
+  $('.js-return-old-form').click (e) ->
+    toggleForm()
+    e.preventDefault()
+
+  $('.js-select-city').change ->
+      $('.annotation').toggle()
+
 perform_ajax = ->
   $.ajax
     type: 'post'
@@ -13,14 +42,11 @@ perform_ajax = ->
       last_name: $("#last_name").val(),
       email: $("#email").val(),
       quantity: $(".number").text().trim(),
-      address: $("#address").val()
     }
-    success: ->
+    success: (response) ->
       $('.js-send-form').prop('disabled', true)
       $('.js-send-form').addClass('disabled')
-
-      show_notify('Ваша покупка успешно оформлена!', 'success')
-      hide_notify()
+      $('.order_form').append(response)
 
     error: ->
       show_notify('Произошла ошибка. Возможно, заполнены не все поля', 'error')

@@ -3,10 +3,19 @@ class OrdersController < ApplicationController
     if request.xhr?
       order = Order.new(order_params)
       if order.save
-        #robokassa stuff
+        render partial: 'commons/pay_button', locals: { id: order.id, quantity: order.quantity.to_i * 10 }
+      else
+        render nothing: true, status: 500
+      end
+    end
+  end
 
-        render nothing: true and return
-        #render js: "window.location.pathname='#{root_path}'"
+  def update
+    if request.xhr?
+      order = Order.find(params[:id])
+      order.address = params[:address]
+      if order.save
+        render nothing: true, status: 200
       else
         render nothing: true, status: 500
       end
