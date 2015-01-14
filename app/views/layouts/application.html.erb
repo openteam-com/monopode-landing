@@ -14,6 +14,12 @@
           <%= flash[:notice] %>
         </div>
       <% end %>
+
+      <%= content_tag :div, class: 'notify alert', style: flash[:alert] ? nil : 'display: none' do %>
+        <div class="notify_text">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
     </div>
 
     <ul class="content">

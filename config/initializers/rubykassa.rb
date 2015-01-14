@@ -13,6 +13,6 @@ Rubykassa.configure do |config|
   }
   config.fail_callback = ->(notification) {
     Order.find(params[:InvId]).update_attribute(:payment_status, "Не оплачено")
-    redirect_to root_path, flash: { error: 'При оплате возникли проблемы' }
+    redirect_to root_path, flash: { alert: 'При оплате возникли проблемы' }
   }
 end

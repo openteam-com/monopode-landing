@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :manage do
     resources :orders, only: :index
+
+    root to: 'orders#index'
   end
 
   resources :main_page, only: :index
