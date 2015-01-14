@@ -8,13 +8,15 @@ $ ->
     return false if $('.js-order-button').hasClass('disabled')
     id = $('.js-order-button').attr('id')
     address = $('#address').val()
+    city = $('.js-select-city').val()
+    full_address = city + ", " + address
     $.ajax
       type: 'post'
       url: "/orders/"+id
       data: {
         _method: 'put'
         id: id
-        address: address
+        address: full_address
       }
 
     $('.js-order-button').attr('disabled', true)
@@ -29,11 +31,7 @@ $ ->
       show_notify('Неверно заполнено поле e-mail', 'warning')
       hide_notify()
 
-    e.preventDefault()
-
-  #$('.js-return-old-form').click (e) ->
-    #toggleForm()
-    #e.preventDefault()
+    e.preventDefault() # ;/
 
   $('.js-select-city').change ->
       $('.annotation').toggle()
