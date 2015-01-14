@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141224033845) do
     t.string   "email"
     t.integer  "quantity"
     t.string   "address"
-    t.string   "payment_status"
+    t.string   "payment_status", default: "Ожидается оплата"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

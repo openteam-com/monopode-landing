@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :email
       t.integer :quantity
       t.string :address
-      t.string :payment_status
+      t.string :payment_status, default: "Ожидается оплата"
       t.timestamps
     end
   end
