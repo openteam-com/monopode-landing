@@ -13,7 +13,7 @@ end
 #  email          :string(255)
 #  quantity       :integer
 #  address        :string(255)
-#  payment_status :string(255)
+#  payment_status :string(255)      default("Ожидается оплата")
 #  created_at     :datetime
 #  updated_at     :datetime
 #
