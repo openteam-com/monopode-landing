@@ -4,6 +4,7 @@
 .DS_Store
 .sass-cache/
 /.bundle
+/.capistrano
 /bin
 /config/database.yml
 /config/deploy.yml

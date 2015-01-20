@@ -1,0 +1,7 @@
+app:
+  secret: SECRET
+
+robokassa:
+  login:    LOGIN
+  secret_1: SECRET
+  secret_2: SECRET
