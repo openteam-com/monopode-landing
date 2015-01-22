@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224033845) do
+ActiveRecord::Schema.define(version: 20150122085815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20141224033845) do
     t.string   "payment_status", default: "Ожидается оплата"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "value_storages", force: true do |t|
+    t.string  "title"
+    t.integer "value", default: 683
   end
 
 end

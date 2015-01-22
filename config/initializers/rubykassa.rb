@@ -9,6 +9,7 @@ Rubykassa.configure do |config|
   config.result_callback = ->(notification) { render text: notification.success }
   config.success_callback = ->(notification) {
     Order.find(params[:InvId]).update_attribute(:payment_status, "Оплачено")
+    ValueStorage.find(1).increment!(:value,1)
     redirect_to root_path, flash: { notice: 'Оплата прошла успешно' }
   }
   config.fail_callback = ->(notification) {
