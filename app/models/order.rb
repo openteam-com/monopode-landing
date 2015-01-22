@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  validates_presence_of :first_name, :phone, :email#, :quantity
+  validates_presence_of :first_name, :phone, :email, :quantity
 end
 
 # == Schema Information
