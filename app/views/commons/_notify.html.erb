@@ -1,0 +1,13 @@
+<div class="notify_wrapper" align='center'>
+  <%= content_tag :div, class: 'notify', style: flash[:notice] ? nil : 'display: none' do %>
+    <div class="notify_text">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <%= content_tag :div, class: 'notify alert', style: flash[:alert] ? nil : 'display: none' do %>
+    <div class="notify_text">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+</div>

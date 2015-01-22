@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20141224033845) do
   enable_extension "plpgsql"
 
   create_table "orders", force: true do |t|
+    t.integer  "quantity"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.integer  "quantity"
-    t.string   "address"
     t.string   "payment_status", default: "Ожидается оплата"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -12,6 +12,7 @@ group :default do
   gem 'rails',                    '~> 4.1.8'
   gem 'russian'
   gem 'sass-rails',               '~> 4.0.3'
+  gem 'simple_form'
   gem 'uglifier',                 '>= 1.3.0'
   gem 'unicorn',                  '=4.8.3'
 end

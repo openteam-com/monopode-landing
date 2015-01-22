@@ -1,6 +1,5 @@
 $ ->
   init_carousel()
-  init_map()
   init_timer()
 
   $(".js-scroll").click ->
@@ -17,20 +16,23 @@ $ ->
     true
 
   $('.plus').click ->
-    number = $('.number').text().trim()
-    number = parseInt(number)
+    number = $('#order_quantity').val()
+    number = parseInt(number) || 1
     number += 1
-    $('.number').empty().text(number)
+    $('#order_quantity').val(number)
 
     true
 
   $('.minus').click ->
-    number = $('.number').text().trim()
-    number = parseInt(number)
+    number = $('#order_quantity').val()
+    number = parseInt(number) || 1
     if number <= 1
       number = 1
     else
       number -= 1
-    $('.number').empty().text(number)
+    $('#order_quantity').val(number)
 
     true
+
+$(window).load ->
+  init_map()

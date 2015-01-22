@@ -3,8 +3,9 @@ class OrdersController < ApplicationController
     if request.xhr?
       order = Order.new(order_params)
       if order.save
-        render partial: 'commons/pay_button', locals: { id: order.id, quantity: order.quantity.to_i * 10 }
+        render partial: 'commons/pay_button', locals: { id: order.id, quantity: order.quantity.to_i }
       else
+        p order.errors #TODO: удалить перед выкатом
         render nothing: true, status: 500
       end
     end
@@ -25,6 +26,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(:first_name, :last_name, :email, :quantity, :address)
+    params.require(:order).permit(:first_name, :email, :quantity, :address, :phone)
   end
 end

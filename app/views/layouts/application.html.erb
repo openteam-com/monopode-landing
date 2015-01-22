@@ -8,19 +8,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="notify_wrapper" align='center'>
-      <%= content_tag :div, class: 'notify', style: flash[:notice] ? nil : 'display: none' do %>
-        <div class="notify_text">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
-
-      <%= content_tag :div, class: 'notify alert', style: flash[:alert] ? nil : 'display: none' do %>
-        <div class="notify_text">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
-    </div>
+    <%= render partial: 'commons/notify' %>
 
     <ul class="content">
       <li class='black fixed_menu'>
@@ -43,13 +31,12 @@
               <li>Прост в использовании</li>
               <li>Регулируемая длина: от 20 см до 110 см</li>
             </ul>
-
           </div>
 
           <div style='clear: both'></div>
           <div class="order_button">
             <div class="new_price">
-              960<span>руб.</span>
+              <%= t('order.price') %><span>руб.</span>
             </div>
             <div class="old_price">
               1690<span>руб.</span>
@@ -204,78 +191,14 @@
             </li>
           </ul>
         </div>
-        <div id='order_form'></div>
+        <span id='order_form'></span>
       </li>
 
-      <li class='white'>
-        <div class="order_form">
-          <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
-          <div class="left">
-            <div class="new_price">
-              Всего <strong>960</strong><span>руб.</span>
-            </div>
-            <div class="old_price">
-              вместо 1690<span>руб.</span>
-            </div>
-          </div>
-
-          <div class="new_left">
-            <div>
-              <%= select_tag "city", options_for_select([ "Томск", "Другой город"  ], "Томск"), class: 'input js-select-city select' %>
-            </div>
-          </div>
-
-          <div class='right'>
-            <div>
-              <%= text_field_tag :first_name, '', class: 'input', placeholder: 'Имя' %>
-            </div>
-            <div>
-              <%= text_field_tag :last_name, '', class: 'input', placeholder: 'Фамилия' %>
-            </div>
-            <div>
-              <%= email_field_tag :email, '', class: 'input', placeholder: 'E-mail'%>
-            </div>
-            <div class="count">
-              <h3>Количество</h3>
-              <div class='minus'>
-                -
-              </div>
-              <div class="number">
-                1
-              </div>
-              <div class="plus">
-                +
-              </div>
-            </div>
-            <a href='#' class='button js-open-form js-send-form'>отправить заказ</a>
-            <div class="prepayment">
-              100% предоплата
-            </div>
-          </div>
-
-          <div class="new_right">
-            <div class="old_form">
-              <%#= link_to 'Вернуться на прошлый шаг', '#', class: 'js-return-old-form return-old-form' %>
-            </div>
-            <div class="annotation">
-              Забрать свой заказ самостоятельно Вы можете по адресу:
-              <a href='#map'>Алтайская 163б, стр. 4</a>
-              <span class='or'>
-                Либо
-              </span>
-            </div>
-
-            <div>
-              <%= text_field_tag :address, '', class: 'input', placeholder: 'Введите адрес доставки'%>
-            </div>
-          </div>
-          <div style='clear: both'></div>
-        </div>
-      </li>
+      <%= render partial: 'commons/order_form' %>
 
       <li class="white">
         <div class="zg_link">
-          <a href='http://vk.com/selfieznaigorod' class='zg_link' target='_blank'>http://vk.com/selfieznaigorod</a>
+          <a href='https://vk.com/superselfizg' class='zg_link' target='_blank'>https://vk.com/superselfizg</a>
         </div>
         <span id="map"></span>
       </li>
