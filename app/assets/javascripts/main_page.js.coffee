@@ -1,6 +1,7 @@
 $ ->
   init_carousel()
   init_timer()
+  init_gallery()
 
   $(".js-scroll").click ->
     selected = $(this).attr("href")
