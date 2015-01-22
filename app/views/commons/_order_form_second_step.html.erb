@@ -1,0 +1,23 @@
+<%= simple_form_for order do |f| %>
+  <div class="new_left">
+    <%= f.input :city, as: :radio_buttons %>
+  </div>
+
+  <div class="new_right">
+    <div class="annotation">
+      Забрать свой заказ самостоятельно Вы можете по адресу:
+      <a href='#map'><%= t('order.address') %></a>
+      <span class='or'>
+        Либо
+      </span>
+    </div>
+
+    <div>
+      <%= text_field_tag :address, '', class: 'input', placeholder: 'Введите адрес доставки'%>
+    </div>
+
+    <%= pay_url "Оплатить", id, quantity, html: { class: 'button js-order-button new_button', target: '_blank', id: id } %>
+  </div>
+
+  <div style='clear: both'></div>
+<% end %>

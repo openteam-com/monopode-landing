@@ -361,7 +361,6 @@
   #order_form
     padding: 0 0 45px
 
-
   .order_form
     +border-radius(10px)
     +clearfix
@@ -370,7 +369,6 @@
     padding: 30px 0 20px 0
 
     .new_left
-      display: none
 
       .select
         height: 45px
@@ -418,13 +416,15 @@
       margin: 30px 0 0 0
 
       .button
-        float: left
+        float: right
         margin: 15px 33px
         padding: 25px 0
         text-transform: uppercase
         width: 350px
+        outline: none
 
       .prepayment
+        clear: both
         color: #949494
         text-transform: uppercase
 
@@ -441,6 +441,15 @@
           float: left
           padding: 5px 10px
 
+        #order_quantity
+          background-color: transparent
+          border: 0
+          font-size: 30px
+          margin-top: -6px
+          padding: 0
+          width: 52px
+          outline: none
+
         .minus, .plus
           +border-radius(10px)
           background-color: #959595
@@ -449,8 +458,6 @@
           font-size: 30px
 
         .number
-          font-size: 42px
-          text-align: center
           width: 50px
 
     input.input
@@ -467,7 +474,6 @@
       text-transform: uppercase
 
     .new_right
-      display: none
       margin: 0
 
       .return-old-form

@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20150122085815) do
 
   create_table "orders", force: true do |t|
     t.integer  "quantity"
-    t.string   "phone"
     t.string   "address"
+    t.string   "city"
     t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "full_name"
     t.string   "payment_status", default: "Ожидается оплата"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

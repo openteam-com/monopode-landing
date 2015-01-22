@@ -1,15 +1,16 @@
 source 'https://rubygems.org'
 
 group :default do
-  gem "rubykassa"
   gem 'airbrake'
   gem 'coffee-rails',             '~> 4.0.0'
   gem 'compass-rails'
   gem 'configliere'
+  gem 'enumerize'
   gem 'jbuilder',                 '~> 2.0'
   gem 'jquery-rails'
   gem 'pg'
   gem 'rails',                    '~> 4.1.8'
+  gem 'rubykassa'
   gem 'russian'
   gem 'sass-rails',               '~> 4.0.3'
   gem 'simple_form'
