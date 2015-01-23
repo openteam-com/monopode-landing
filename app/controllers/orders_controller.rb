@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   def update
     if request.xhr?
       order = Order.find(params[:id])
-      #order.address = params[:address]
+      order.address = params[:address]
       if order.save
         render nothing: true, status: 200
       else

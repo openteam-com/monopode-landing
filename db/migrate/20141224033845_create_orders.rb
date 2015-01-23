@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :quantity
       t.string :address
       t.string :city
+      t.string :delivery_method
       t.string :email
       t.string :full_name
       t.string :payment_status, default: "Ожидается оплата"

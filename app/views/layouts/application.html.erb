@@ -203,7 +203,13 @@
         <span id='order_form'></span>
       </li>
 
-      <%= render partial: 'commons/order_form' %>
+      <li class='white'>
+        <div class="order_form">
+          <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
+          <%= render partial: 'commons/order_form' %>
+          <%#= render partial: 'commons/order_form_second_step', locals: { order: @order, id: 1, quantity: 1 } %>
+        </div>
+      </li>
 
       <li class="white">
         <div class="zg_link">

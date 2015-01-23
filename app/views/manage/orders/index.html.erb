@@ -2,9 +2,9 @@
   <h1>Заказы</h1>
   <table>
     <thead>
-      <th>Имя</th>
-      <th>Фамилия</th>
+      <th>ФИО</th>
       <th>E-mail</th>
+      <th>Телефон</th>
       <th>Кол-во</th>
       <th>Адрес доставки</th>
       <th>Статус платежа</th>
@@ -13,9 +13,9 @@
     <tbody>
       <% @orders.each do |order|  %>
         <tr>
-          <td><%= order.first_name %></td>
-          <td><%= order.last_name %></td>
+          <td><%= order.full_name %></td>
           <td><%= order.email %></td>
+          <td><%= order.phone %></td>
           <td><%= order.quantity %></td>
           <td><%= order.address %></td>
           <td><%= order.payment_status %></td>

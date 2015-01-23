@@ -1,0 +1,8 @@
+ru:
+  enumerize:
+    city:
+      tomsk: Томск
+      other: Другой город
+    delivery_method:
+      pickup: Забрать самому
+      delivery: Доставка

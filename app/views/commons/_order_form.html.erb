@@ -1,34 +1,24 @@
-<li class='white'>
-  <div class="order_form">
-    <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
-    <div class="left">
-      <div class="new_price">
-        Всего <strong><%= t('order.price') %></strong><span>руб.</span>
-      </div>
-      <div class="old_price">
-        вместо 1690<span>руб.</span>
-      </div>
-    </div>
+<div class="left">
+  <div class="new_price">
+    Всего <strong><%= t('order.price') %></strong><span>руб.</span>
+  </div>
+  <div class="old_price">
+    вместо 1690<span>руб.</span>
+  </div>
+</div>
 
-    <div class='right'>
-      <%= simple_form_for @order, remote: true do |f| %>
-        <%= f.input :full_name, input_html: { class: 'input', placeholder: 'Имя' }, label: false %>
-        <%= f.input :phone, input_html: { class: 'input', placeholder: 'Телефон' }, label: false%>
-        <%= f.input :email, input_html: { class: 'input', placeholder: 'E-mail' }, label: false %>
-        <%= f.submit 'заказать сейчас', class: 'button' %>
-        <%= content_tag :div, class: :count do %>
-          <h3>Количество</h3>
-          <div class='minus'> - </div>
-          <div class="number">
-            <%= f.input :quantity, label: false, input_html: { value: 1 } %>
-          </div>
-          <div class="plus">
-            +
-          </div>
-        <% end %>
-        <div class="prepayment">
-          100% предоплата
-        </div>
-      <% end %>
-    </div>
-  </li>
+<div class='right'>
+  <%= simple_form_for @order, remote: true do |f| %>
+    <%= f.input :full_name, input_html: { class: 'input', placeholder: 'Имя' }, label: false %>
+    <%= f.input :phone, input_html: { class: 'input', placeholder: 'Телефон' }, label: false%>
+    <%= f.input :email, input_html: { class: 'input', placeholder: 'E-mail' }, label: false %>
+    <%= f.submit 'заказать сейчас', class: 'button' %>
+    <%= content_tag :div, class: :count do %>
+      <h3>Количество</h3>
+      <%= content_tag :div, '-', class: :minus %>
+      <%= content_tag :div, class: :number do %> <%= f.input :quantity, label: false, input_html: { value: 1 } %> <% end %>
+      <%= content_tag :div, '+', class: :plus %>
+    <% end %>
+    <div class="prepayment"> 100% предоплата </div>
+  <% end %>
+</div>

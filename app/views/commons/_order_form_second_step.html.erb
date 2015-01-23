@@ -1,23 +1,24 @@
 <%= simple_form_for order do |f| %>
   <div class="new_left">
-    <%= f.input :city, as: :radio_buttons %>
+    <%= f.input :city, as: :radio_buttons, label: 'Ваш город' %>
   </div>
 
   <div class="new_right">
-    <div class="annotation">
-      Забрать свой заказ самостоятельно Вы можете по адресу:
-      <a href='#map'><%= t('order.address') %></a>
-      <span class='or'>
-        Либо
-      </span>
+    <%= f.input :address, as: :hidden, input_html: { value: 'Самовывоз' } %> <!-- адрес доставки: самовывоз || адрес -->
+
+    <div class="form_1">
+      <!-- if Tomsk was selected -->
+      <%= f.input :delivery_method, as: :radio_buttons, label: false %>
+      <%= f.input :post_address, label: false, input_html: { placeholder: 'Адрес доставки' } %>
     </div>
 
-    <div>
-      <%= text_field_tag :address, '', class: 'input', placeholder: 'Введите адрес доставки'%>
+    <div class="form_2" style='display: none'> <!-- TODO: убрать -->
+      <!-- if Other city was selected -->
+      <%= f.input :fio, label: false, input_html: { placeholder: 'Фамилия, Имя, Отчество' } %>
+      <%= f.input :post_index, label: false, input_html: { placeholder: 'Почтовый индекс' } %>
+      <%= f.input :post_address, label: false, input_html: { placeholder: 'Почтовый адрес' } %>
     </div>
 
-    <%= pay_url "Оплатить", id, quantity, html: { class: 'button js-order-button new_button', target: '_blank', id: id } %>
+    <%= pay_url "Оплатить", id, quantity, html: { class: 'button js-order-button', target: '_blank', id: id } %>
   </div>
-
-  <div style='clear: both'></div>
 <% end %>
