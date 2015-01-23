@@ -1,4 +1,7 @@
 $ ->
+  $('#order_phone').inputmask 'mask',
+    'mask': '+7-(999)-999-9999'
+
   $('.new_order').on('ajax:success', (e, data, status, xhr) ->
     $('.right', '.order_form').hide()
     $('.order_form').append(xhr.responseText)
@@ -6,11 +9,11 @@ $ ->
   )
 
   # if Tomsk was selected
-  $('.radio_buttons', '.order_delivery_method').change ->
-    $('.order_post_address', '.form_1').toggle() # toggle fake input for address
+  $('.order_form').on 'change', '.order_delivery_method .radio_buttons', ->
+    $('.order_post_address', '.form_1').toggle()
 
   # if Other city was selected
-  $('.radio_buttons', '.order_city').change ->
+  $('.order_form').on 'change', '.order_city .radio_buttons', ->
     $('.form_1').toggle()
     $('.form_2').toggle()
     $('.order_post_address', '.form_2').toggle() # toggle fake input for address

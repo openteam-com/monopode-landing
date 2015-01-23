@@ -9,13 +9,6 @@ $ ->
 
     false
 
-  hide_notify() if $('.notify:visible').length
-
-  $('.notify').click ->
-    $(this).hide()
-
-    true
-
   $('.plus').click ->
     number = $('#order_quantity').val()
     number = parseInt(number) || 1
