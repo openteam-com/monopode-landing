@@ -28,4 +28,7 @@
         top: 90
         left: 10
 
-    map.geoObjects.add new ymaps.Placemark [56.4800670145844, 85.00952437484801]
+    map.geoObjects.add new ymaps.Placemark([56.4800670145844, 85.00952437484801],
+      balloonContentHeader: "Алтайская 161 б стр. 2"
+      hintContent: "Алтайская 161 б стр. 2"
+    )
