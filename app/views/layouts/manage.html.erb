@@ -7,6 +7,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= yield %>
+    <div class="orders_wrapper">
+      <ul>
+        <%= content_tag :li, class: controller_name == "orders" ? "selected" : ""  do%>
+          <%= link_to "Заказы", manage_root_path %>
+        <% end %>
+
+        <%= content_tag :li, class: controller_name == "phone_orders" ? "selected" : ""  do%>
+          <%= link_to "Заказы звонка", manage_phone_orders_path %>
+        <% end %>
+      </ul>
+      <%= yield %>
+    </div>
   </body>
 </html>

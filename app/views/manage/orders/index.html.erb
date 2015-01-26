@@ -1,27 +1,24 @@
-<div class="orders_wrapper">
-  <h1>Заказы</h1>
-  <table>
-    <thead>
-      <th>ФИО</th>
-      <th>E-mail</th>
-      <th>Телефон</th>
-      <th>Кол-во</th>
-      <th>Адрес доставки</th>
-      <th>Статус платежа</th>
-      <th>Дата</th>
-    </thead>
-    <tbody>
-      <% @orders.each do |order|  %>
-        <tr>
-          <td><%= order.full_name %></td>
-          <td><%= order.email %></td>
-          <td><%= order.phone %></td>
-          <td><%= order.quantity %></td>
-          <td><%= order.address %></td>
-          <td><%= order.payment_status %></td>
-          <td><%= order.created_at.strftime("%d-%m-%y %H:%M") %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<table>
+  <thead>
+    <th>ФИО</th>
+    <th>E-mail</th>
+    <th>Телефон</th>
+    <th>Кол-во</th>
+    <th>Адрес доставки</th>
+    <th>Статус платежа</th>
+    <th>Дата</th>
+  </thead>
+  <tbody>
+    <% @orders.each do |order|  %>
+      <tr>
+        <td><%= order.full_name %></td>
+        <td><%= order.email %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.quantity %></td>
+        <td><%= order.address %></td>
+        <td><%= order.payment_status %></td>
+        <td><%= order.created_at.strftime("%d-%m-%y %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

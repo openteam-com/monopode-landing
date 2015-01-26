@@ -207,7 +207,6 @@
         <div class="order_form">
           <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
           <%= render partial: 'commons/order_form' %>
-          <%#= render partial: 'commons/order_form_second_step', locals: { order: @order, id: 1, quantity: 1 } %>
         </div>
       </li>
 
@@ -230,6 +229,16 @@
       </li>
     </ul>
 
+    <div class="overlay" title="окно"></div>
+    <div class="popup">
+      <div class="close_window">x</div>
+      <%= simple_form_for @phone_order, remote: true do |f| %>
+        <%= f.input :full_name, input_html: { class: 'input', placeholder: 'Имя' }, label: false %>
+        <%= f.input :phone, input_html: { class: 'input', placeholder: 'Телефон' }, label: false %>
+        <%= f.submit 'ЗАКАЗАТЬ ЗВОНОК', class: 'button close_button'%>
+      <% end %>
+    </div>
+    <a class="open_window"href="#">хочу чтоб по клику открылось окно</a>
     <%= yield %>
   </body>
 </html>

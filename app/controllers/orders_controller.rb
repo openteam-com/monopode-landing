@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
       if order.save
         render partial: 'commons/order_form_second_step', locals: { id: order.id, quantity: order.quantity.to_i, order: Order.find(order.id) }
       else
-        p order.errors #TODO: удалить перед выкатом
         render nothing: true, status: 500
       end
     end

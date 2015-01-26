@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <th>ФИО</th>
+    <th>Телефон</th>
+    <th>Дата</th>
+  </thead>
+  <tbody>
+    <% @phone_orders.each do |order|  %>
+      <tr>
+        <td><%= order.full_name %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.created_at.strftime("%d-%m-%y %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
