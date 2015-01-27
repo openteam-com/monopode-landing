@@ -16,6 +16,7 @@ group :default do
   gem 'simple_form'
   gem 'uglifier',                 '>= 1.3.0'
   gem 'unicorn',                  '=4.8.3'
+  gem 'whenever'
 end
 
 group :development do
