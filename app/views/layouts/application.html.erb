@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>MonopodeLanding</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag('http://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU') %>
-    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
     <%= render partial: 'commons/notify' %>
