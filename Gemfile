@@ -8,6 +8,7 @@ group :default do
   gem 'enumerize'
   gem 'jbuilder',                 '~> 2.0'
   gem 'jquery-rails'
+  gem 'mainsms_api'
   gem 'pg'
   gem 'rails',                    '~> 4.1.8'
   gem 'rubykassa'

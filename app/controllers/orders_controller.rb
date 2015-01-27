@@ -1,3 +1,4 @@
+require 'sms'
 class OrdersController < ApplicationController
   def create
     if request.xhr?
@@ -16,6 +17,7 @@ class OrdersController < ApplicationController
       order.address = params[:address]
       if order.save
         render nothing: true, status: 200
+        Sms.new.send("Заказ №#{params[:id]} на сумму #{order.quantity * t('order.price')} создан.")
       else
         render nothing: true, status: 500
       end

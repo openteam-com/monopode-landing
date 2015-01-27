@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+
+require 'sms'
 Rubykassa.configure do |config|
   config.login = Settings['robokassa.login']
   config.first_password = Settings['robokassa.secret_1']
@@ -10,6 +12,7 @@ Rubykassa.configure do |config|
   config.success_callback = ->(notification) {
     Order.find(params[:InvId]).update_attribute(:payment_status, "Оплачено")
     ValueStorage.find(1).increment!(:value,1)
+    Sms.new.send("Заказ №#{params[:InvId]} оплачен.")
     redirect_to root_path, flash: { notice: 'Оплата прошла успешно' }
   }
   config.fail_callback = ->(notification) {
