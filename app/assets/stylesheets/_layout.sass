@@ -170,7 +170,7 @@
           vertical-align: super
 
       .new_price
-        font-size: 54px
+        font-size: 60px
 
         span
           font-size: 24px
@@ -342,10 +342,12 @@
 
       .cloud
         +border-radius(10px)
-        width: 270px
+        width: 325px
+        font-size: 18px
+        line-height: 22px
         background-color: white
         float: left
-        margin: 50px 135px 30px 0
+        margin: 50px 50px 30px 0
         position: relative
         padding: 10px
 
@@ -362,13 +364,13 @@
 
         &.first
           &:after
-            left: 83%
+            left: 70%
 
         &.third
           margin-right: 0
 
           &:after
-            left: 17%
+            left: 30%
 
     .users_comments
       margin: 0 auto
@@ -401,19 +403,22 @@
     padding: 30px 0 20px
     +clearfix
 
-  a.zg_link
-    color: #0055d6
-    font-size: 20px
-    padding: 30px 0 20px 65px
-    text-decoration: none
+  .links
+    &.limited
+      padding: 30px 0 25px
 
-    &.vk
-      background: image-url('vk.png') no-repeat left center
+    a.zg_link
+      color: #0055d6
+      font-size: 20px
+      padding: 30px 0 20px 65px
+      text-decoration: none
 
-    &.odnkl
-      background: image-url('odnkl.jpg') no-repeat left center
-      margin-left: 40px
+      &.vk
+        background: image-url('vk.png') no-repeat left center
 
+      &.odnkl
+        background: image-url('odnkl.jpg') no-repeat left center
+        margin-left: 40px
 
   .map
     height: 350px

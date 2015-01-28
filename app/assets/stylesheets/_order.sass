@@ -25,7 +25,7 @@
       +inline-block
       color: #fc0025
       float: left
-      font-size: 34px
+      font-size: 50px
       margin-bottom: 10px
 
       span
@@ -40,13 +40,13 @@
       position: relative
 
       &:after
+        +transform(rotate(-19deg))
         border-top: 1px solid red
         content: ""
         left: 76px
         position: absolute
         right: 0
         top: 50%
-        transform: rotate(-19deg)
         width: 53%
 
       span
@@ -92,7 +92,8 @@
       #order_quantity
         background-color: transparent
         border: 0
-        font-size: 30px
+        font-size: 40px
+        font-weight: bold
         margin-top: -6px
         outline: none
         padding: 0
@@ -101,7 +102,7 @@
         width: 52px
 
       .order_quantity
-        padding: 5px 0
+        padding: 0
 
       .minus, .plus
         +border-radius(10px)
