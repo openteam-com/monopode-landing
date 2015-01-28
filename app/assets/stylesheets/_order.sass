@@ -73,7 +73,6 @@
       outline: none
 
     .prepayment
-      clear: both
       color: #949494
       text-transform: uppercase
 
@@ -95,9 +94,14 @@
         border: 0
         font-size: 30px
         margin-top: -6px
-        padding: 0
-        width: 52px
         outline: none
+        padding: 0
+        pointer-events: none
+        text-align: center
+        width: 52px
+
+      .order_quantity
+        padding: 5px 0
 
       .minus, .plus
         +border-radius(10px)

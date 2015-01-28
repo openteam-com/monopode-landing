@@ -19,8 +19,16 @@
   &.material
     padding: 20px 0 30px 17px
 
+    li
+      margin: 0 0 5px 0
+      font-size: 18px
+
   &.interface
     padding: 20px 0 0 17px
+
+    li
+      margin: 0 0 5px 0
+      font-size: 18px
 
 .horizontal_feature
   li
@@ -69,7 +77,12 @@
         margin-bottom: 10px
 
 .content
-  li
+  div
+    .limited
+      padding: 30px 0 45px
+      width: 1200px
+      margin: 0 auto
+
     &.black
       background-color: #252525
 
@@ -88,21 +101,12 @@
     &.first_block
       margin-top: 56px
 
-      .action
-        float: right
-        font-size: 20px
-        margin: 30px 18px -20px
-        text-transform: uppercase
-
-    > div
-      padding: 30px 0 45px
-      width: 1200px
-      margin: 0 auto
-
   .header, .footer
     +clearfix
-    padding: 20px 0
     background: image-url("logo.png") no-repeat left center
+
+    &.limited
+      padding: 20px 0
 
     .logo
       display: block
@@ -126,53 +130,71 @@
   .order
     background: image-url("order_bg.jpg") no-repeat top center
 
+    &.limited
+      padding: 30px 0 27px
+
     .order_text
-      width: 58%
+      width: 60%
       padding: 20px 0 0 40px
 
-  .order_button
-    background-color: #eaeaea
-    border-bottom-left-radius: 10px
-    border-bottom-right-radius: 10px
-    float: right
-    margin: 45px 0 20px 0
-    padding: 30px 0 25px
-    width: 470px
+  .order_action_wrapper
+    +clearfix
+    clear: both
 
-    .new_price, .old_price
-      +inline-block
-      float: left
-      padding-left: 60px
+    &.limited
+      padding: 0 0 45px
 
-      span
-        vertical-align: super
+    .action_timer
+      +clearfix
 
-    .new_price
-      font-size: 44px
+      .action
+        float: right
+        font-size: 20px
+        margin: 30px 18px -20px
+        text-transform: uppercase
 
-      span
-        font-size: 24px
+    .order_button
+      background-color: #eaeaea
+      border-bottom-left-radius: 10px
+      border-bottom-right-radius: 10px
+      float: right
+      padding: 30px 0 25px
+      width: 470px
 
-    .old_price
-      font-size: 24px
-      position: relative
+      .new_price, .old_price
+        +inline-block
+        float: left
+        padding-left: 60px
 
-      &:after
-        border-top: 1px solid red
-        content: ""
-        left: 83px
-        position: absolute
-        right: 0
-        top: 46%
-        transform: rotate(-19deg)
-        width: 46%
+        span
+          vertical-align: super
 
-      span
-        font-size: 16px
+      .new_price
+        font-size: 54px
 
-    .button
-      margin: 75px auto 0
-      text-transform: uppercase
+        span
+          font-size: 24px
+
+      .old_price
+        font-size: 34px
+        position: relative
+
+        &:after
+          +transform(rotate(-19deg))
+          border-top: 1px solid red
+          content: ""
+          left: 40px
+          position: absolute
+          right: 0
+          top: 34%
+          width: 71%
+
+        span
+          font-size: 16px
+
+      .button
+        margin: 75px auto 0
+        text-transform: uppercase
 
   .photo
     position: relative
@@ -212,6 +234,8 @@
           display: block
           width: 230px
           height: 230px
+          pointer-events: none
+          cursor: default
           text-indent: -9999px
 
           &.pic1
@@ -241,7 +265,9 @@
 
   .about
     +clearfix
-    padding: 30px 0 0
+
+    &.limited
+      padding: 30px 0 0
 
     h2
       font-size: 23px
@@ -259,35 +285,38 @@
     position: relative
 
     h1
-      padding: 0 0 40px 0
+      padding: 0 0 90px 0
 
     .monopode_text, .phone_text, .bracket_text
       position: absolute
-      font-size: 13px
+      font-size: 15px
       white-space: pre
 
     .monopode_text
-      left: 7px
-      top: 192px
+      left: -14px
+      top: 210px
 
     .phone_text
-      bottom: 33px
-      left: 20px
+      bottom: 28px
+      left: -34px
 
     .bracket_text
-      bottom: 60px
-      left: 436px
+      bottom: 50px
+      left: 392px
+      text-align: center
 
     .caption
       +border-radius(10px)
+      +inline-block
       background: white
       border: 3px solid white
       color: #ff4200
-      display: table-cell
-      font-size: 20px
+      font-size: 22px
       font-weight: bold
-      margin: 0 -10px 0 0
       padding: 8px
+
+      &.first
+        margin: -20px 0 0 28px
 
       span
         display: table-cell
@@ -295,7 +324,7 @@
 
     .right_block
       float: right
-      width: 450px
+      width: 477px
       padding: 15px 0
 
   #how_it_works

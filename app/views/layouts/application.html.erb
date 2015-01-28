@@ -11,15 +11,15 @@
   <body>
     <%= render partial: 'commons/notify' %>
 
-    <ul class="content">
-      <li class='black fixed_menu'>
-        <div class="header">
+    <div class="content">
+      <div class='black fixed_menu'>
+        <div class="header limited">
           <%= render 'commons/menu' %>
         </div>
-      </li>
+      </div>
 
-      <li class='white first_block'>
-        <div class="order">
+      <div class='white first_block'>
+        <div class="order limited">
           <div class="order_text">
             <h1 class="bold_black">ДЕЛАЙ СУПЕР - ФОТО В ПУТЕШЕСТВИЯХ С МОНОПОДОМ ДЛЯ СМАРТФОНА:</h1>
 
@@ -33,27 +33,31 @@
               <li>Регулируемая длина: от 20 см до 110 см</li>
             </ul>
           </div>
+        </div>
 
-          <div style='clear: both'></div>
+        <div class="order_action_wrapper limited">
+
           <div class="order_button">
             <div class="new_price">
               <%= t('order.price') %><span>руб.</span>
             </div>
+
             <div class="old_price">
               1690<span>руб.</span>
             </div>
 
             <a href='#order_form' class='button js-scroll'>Заказать сейчас</a>
           </div>
+
+          <div class="action_timer">
+            <span class='action'>до конца акции осталось:</span>
+            <div class="countdown"></div>
+          </div>
         </div>
-        <span class='action'>до конца акции осталось:</span>
-        <div class="countdown"></div>
-      </li>
+      </div>
 
-      <div style='clear: both'></div>
-
-      <li class='black'>
-        <div class="photo">
+      <div class='black'>
+        <div class='photo limited'>
           <h1 class="normal_white">ФОТОГРАФИИ ПОЛЬЗОВАТЕЛЕЙ</h1>
           <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
           <div class="jcarousel">
@@ -70,10 +74,10 @@
           </div>
           <a href="#" class="jcarousel-control-next">&rsaquo;</a>
         </div>
-      </li>
+      </div>
 
-      <li class="white">
-        <div class="about">
+      <div class="white">
+        <div class="about limited">
           <h1 class="normal_orange">О МОНОПОДЕ</h1>
           <h2>Монопод - это универсальный компактный телескопический держатель (штатив) для селфи.</h2>
           <ul class="horizontal_feature about_monopode">
@@ -95,12 +99,12 @@
           </ul>
         </div>
         <div id='tech_details'></div>
-      </li>
+      </div>
 
-      <li class="grey">
-        <div class="tech_details">
+      <div class="grey">
+        <div class="tech_details limited">
           <h1>ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ</h1>
-          <div class="caption">
+          <div class="caption first">
             <span>
               КОМПЛЕКТАЦИЯ
             </span>
@@ -136,10 +140,10 @@
           </div>
         </div>
         <div id='how_it_works'></div>
-      </li>
+      </div>
 
-      <li class="white">
-        <div class="how_it_works" >
+      <div class="white">
+        <div class="how_it_works limited">
           <h1 class="normal_orange">КАК ЭТО РАБОТАЕТ</h1>
           <ul class="horizontal_feature how_to">
             <li style="background: url('<%= asset_path("how_it_works1.jpg") %>') no-repeat top center">
@@ -155,8 +159,8 @@
         </div>
       </li>
 
-      <li class="grey">
-        <div class="reviews">
+      <div class="grey">
+        <div class="reviews limited">
           <h1>ОТЗЫВЫ ПОЛЬЗОВАТЕЛЕЙ</h1>
           <div class="clouds">
             <div class="cloud first">
@@ -181,10 +185,10 @@
           </div>
         </div>
         <div id='guarantee'></div>
-      </li>
+      </div>
 
-      <li class='white'>
-        <div class="guarantee">
+      <div class='white'>
+        <div class="guarantee limited">
           <ul class='horizontal_feature order_guarantee'>
             <li style="background: url('<%= asset_path("guarantee.png") %>') no-repeat top center">
               <h2>100% ГАРАНТИЯ</h2>
@@ -202,17 +206,17 @@
           </ul>
         </div>
         <span id='order_form'></span>
-      </li>
+      </div>
 
-      <li class='white'>
-        <div class="order_form">
+      <div class='white'>
+        <div class='order_form limited'>
           <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
           <%= render partial: 'commons/order_form' %>
         </div>
-      </li>
+      </div>
 
-      <li class="white">
-        <div>
+      <div class='white'>
+        <div class='limited'>
           <a href='http://vk.com/superselfizg' class='zg_link vk' target='_blank'>Вконтакте</a>
           <a href='http://ok.ru/profile/567898422457' class='zg_link odnkl' target='_blank'>Одноклассники</a>
           <span id="map"></span>
@@ -223,12 +227,12 @@
         <div class='map' data-latitude='56.4800670145844' data-longitude='85.00952437484801'></div>
       </div>
 
-      <li class="black">
-        <div class="footer">
+      <div class='black'>
+        <div class='footer limited'>
           <%= render 'commons/menu' %>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <div class="overlay" title="окно"></div>
     <div class="popup">
