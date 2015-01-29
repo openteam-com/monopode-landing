@@ -216,8 +216,8 @@
       <div class='white'>
         <div class='order_form limited'>
           <h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
-          <%= render partial: 'commons/order_form_second_step', locals: { order: @order, id: 5, quantity: 2 } %>
-          <%#= render partial: 'commons/order_form' %>
+          <%#= render partial: 'commons/order_form_second_step', locals: { order: @order, id: 5, quantity: 2 } %>
+          <%= render partial: 'commons/order_form' %>
         </div>
       </div>
 
@@ -241,6 +241,7 @@
     </div>
 
     <%= render partial: 'commons/modal_window' %>
+    <%= render partial: 'commons/metrika' if Rails.env.production?  %>
 
     <%= yield %>
   </body>
