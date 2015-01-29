@@ -9,6 +9,8 @@ group :default do
   gem 'jbuilder',                 '~> 2.0'
   gem 'jquery-rails'
   gem 'mainsms_api'
+  gem 'paperclip'
+  gem 'paperclip-elvfs'
   gem 'pg'
   gem 'rails',                    '~> 4.1.8'
   gem 'rubykassa'

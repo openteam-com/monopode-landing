@@ -16,6 +16,11 @@
         <%= content_tag :li, class: controller_name == "phone_orders" ? "selected" : ""  do%>
           <%= link_to "Заказы звонка", manage_phone_orders_path %>
         <% end %>
+
+        <%= content_tag :li, class: controller_name == "meta_descriptions" ? "selected" : ""  do%>
+          <%= link_to "Мета описание", manage_meta_description_path(MetaDescription.last) %>
+          <%= link_to "(редактировать)", edit_manage_meta_description_path(MetaDescription.last) %>
+        <% end %>
       </ul>
       <%= yield %>
     </div>

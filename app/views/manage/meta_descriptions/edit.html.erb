@@ -1,0 +1,13 @@
+<div class="form_wrapper">
+  <%= simple_form_for [:manage, @meta_description] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :h1 %>
+    <%= f.input :keywords %>
+    <%= f.input :description %>
+    <%= f.input :og_title %>
+    <%= f.input :og_description %>
+    <%= f.input :introduction %>
+    <%= f.input :og_image %>
+    <%= f.submit "Изменить"%>
+  <% end %>
+</div>

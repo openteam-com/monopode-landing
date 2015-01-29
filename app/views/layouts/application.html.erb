@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MonopodeLanding</title>
+    <title><%= @meta_description.title %></title>
+    <meta name='keywords' content='<%= @meta_description.keywords %>' />
+    <meta name='description' content='<%= @meta_description.description %>' />
+    <meta property="og:title" content='<%= @meta_description.og_title %>' />
+    <meta property="og:description" content='<%= @meta_description.og_description %>' />
+    <meta property="og:image" content='<%= @meta_description.og_image_url %>' />
     <%= csrf_meta_tags %>
     <%= favicon_link_tag %>
     <%= javascript_include_tag 'application' %>

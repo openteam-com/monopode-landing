@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root to: 'orders#index'
     resources :orders, only: :index
     resources :phone_orders, only: :index
+    resources :meta_descriptions, only: [:edit, :update, :show]
   end
 
   resources :main_page, only: :index

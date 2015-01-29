@@ -1,0 +1,34 @@
+<div class="meta_wrapper">
+  <div class="attribute">
+    <h1>Title:</h1>
+    <span><%=@meta_description.title%></span>
+  </div>
+  <div class="attribute">
+    <h1>H1:</h1>
+    <span><%=@meta_description.h1%></span>
+  </div>
+  <div class="attribute">
+    <h1>Keywords:</h1>
+    <span><%=@meta_description.keywords%></span>
+  </div>
+  <div class="attribute">
+    <h1>Description:</h1>
+    <span><%=@meta_description.description%></span>
+  </div>
+  <div class="attribute">
+    <h1>OG title:</h1>
+    <span><%=@meta_description.og_title%></span>
+  </div>
+  <div class="attribute">
+    <h1>OG description:</h1>
+    <span><%=@meta_description.og_description%></span>
+  </div>
+  <div class="attribute">
+    <h1>Og-image:</h1>
+    <span><%=image_tag @meta_description.og_image_url%></span>
+  </div>
+  <div class="attribute">
+    <h1>Introduction:</h1>
+    <span><%=@meta_description.introduction%></span>
+  </div>
+</div>

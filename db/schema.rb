@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126033427) do
+ActiveRecord::Schema.define(version: 20150129032745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "meta_descriptions", force: true do |t|
+    t.string   "title"
+    t.string   "h1"
+    t.text     "keywords"
+    t.text     "description"
+    t.string   "og_title"
+    t.text     "og_description"
+    t.text     "introduction"
+    t.string   "og_image_file_name"
+    t.string   "og_image_content_type"
+    t.string   "og_image_file_size"
+    t.string   "og_image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: true do |t|
     t.integer  "quantity"
