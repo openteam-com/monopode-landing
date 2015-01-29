@@ -4,6 +4,7 @@ $ ->
 
   $('.new_order').on('ajax:success', (e, data, status, xhr) ->
     $('.right', '.order_form').hide()
+    $('.left', '.order_form').hide()
     $('.order_form').append(xhr.responseText)
     $('.order_form').css('background', '#f2f2f2') # ?
   )

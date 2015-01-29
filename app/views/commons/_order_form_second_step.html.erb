@@ -1,24 +1,40 @@
 <%= simple_form_for order do |f| %>
   <div class="new_left">
-    <%= f.input :city, as: :radio_buttons, label: 'Ваш город' %>
+    <%= f.input :city, as: :radio_buttons, label: false %>
+
+    <div class="form_1">
+      <!-- if Tomsk was selected -->
+      <%= f.input :delivery_method, as: :radio_buttons, label: false %>
+      <%= f.input :post_address, label: false, input_html: { placeholder: 'Адрес' } %>
+      <div class="helper_info">Стоимость доставки - 150 рублей.</div>
+      <div class="helper_info">При заказе от 3-х моноподов доставка БЕСПЛАТНО.</div>
+    </div>
   </div>
 
   <div class="new_right">
     <%= f.input :address, as: :hidden, input_html: { value: 'Самовывоз' } %> <!-- адрес доставки: самовывоз || адрес -->
 
-    <div class="form_1">
-      <!-- if Tomsk was selected -->
-      <%= f.input :delivery_method, as: :radio_buttons, label: false %>
-      <%= f.input :post_address, label: false, input_html: { placeholder: 'Адрес доставки' } %>
-    </div>
-
     <div class="form_2" style='display: none'> <!-- TODO: убрать -->
       <!-- if Other city was selected -->
       <%= f.input :fio, label: false, input_html: { placeholder: 'Фамилия, Имя, Отчество' } %>
       <%= f.input :post_index, label: false, input_html: { placeholder: 'Почтовый индекс' } %>
-      <%= f.input :post_address, label: false, input_html: { placeholder: 'Почтовый адрес' } %>
+      <%= f.input :post_address, as: :text, label: false, input_html: { placeholder: 'Почтовый адрес', rows: 3 } %>
+      <div class="helper_info">
+        Ориентировочный срок доставки 7 рабочих дней.
+      </div>
     </div>
 
-    <%= pay_url "Оплатить", id, quantity, html: { class: 'button js-order-button', target: '_blank', id: id } %>
   </div>
+  <div class="total">
+    <div class="text">
+      итого:
+    </div>
+    <div class="sum">
+      <%= quantity * t("order.price") + (quantity < 3 ? 150 : 0) %> <span class="rubles">рублей</span>
+    </div>
+    <div class="details">
+      <%= quantity * t("order.price") %> (<%= quantity %> <%= Russian::pluralize(quantity, 'монопод', 'монопода', 'моноподов') %>) <%= "+ 150 рублей доставка" if quantity <3 %>
+    </div>
+  </div>
+  <%= pay_url "Оплатить", id, quantity, html: { class: 'button js-order-button new_button', target: '_blank', id: id } %>
 <% end %>

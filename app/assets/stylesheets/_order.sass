@@ -1,22 +1,47 @@
+input[type=radio]
+  display: none
+
+input[type=radio]:checked + label:before
+  color: red
+  content: "\2022"
+  font-size: 34px
+  line-height: 25px
+  text-align: center
+
+.radio
+  label
+    +inline-block
+    cursor: pointer
+    margin: 0 0 0 10px
+    padding-left: 25px
+    position: relative
+
+    &:before
+      +border-radius(11px)
+      +inline-block
+      background-color: #fff
+      bottom: 1px
+      box-shadow: inset 0px       2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8)
+      content: ""
+      height: 22px
+      left: -5px
+      position: absolute
+      width: 22px
+
 #order_form
   padding: 0 0 45px
 
 .order_form
   +border-radius(10px)
   +clearfix
-  background: #f2f2f2 image-url('order.jpg') no-repeat
-  background-position: 60px 73px
+  background: #f2f2f2 image-url('order.jpg') no-repeat left center
   padding: 30px 0 20px 0
+  position: relative
 
-  .new_left
-    .order_city
-      width: 120px
+  form.new_order, form.edit_order
+    margin: 20px 0 0
 
-      .radio
-        float: left
-        margin: 5px 0
-
-  .left, .new_left
+  .left
     float: left
     width: 590px
     margin: 18px 0 0 50px
@@ -54,15 +79,9 @@
         vertical-align: super
 
 
-  .right, .new_right
+  .right
     float: left
     margin: 30px 0 0 0
-
-    .order_delivery_method
-      width: 140px
-
-      .radio
-        margin: 5px 0
 
     .button
       float: right
@@ -78,7 +97,7 @@
 
     .count
       float: left
-      margin: 20px 0 0 0
+      margin: 20px 0 10px
 
       h3
         color: #939393
@@ -94,7 +113,7 @@
         border: 0
         font-size: 40px
         font-weight: bold
-        margin-top: -6px
+        margin-top: -13px
         outline: none
         padding: 0
         pointer-events: none
@@ -124,41 +143,120 @@
     width: 468px
 
   .new_button
-    clear: both
+    display: inline
+    float: right
+    margin: 30px 30px 0 0
+    padding: 30px 20px 18px
     text-transform: uppercase
+    width: auto
+
+  .total
+    clear: both
+    float: left
+    margin: 30px 0 0 30px
+    width: 400px
+
+    div
+      margin: 10px 0
+
+    .text
+      text-transform: uppercase
+      color: #828282
+      font-size: 20px
+
+    .sum
+      color: #fc0535
+      font-size: 40px
+      font-weight: bold
+
+      .rubles
+        font-weight: normal
+        font-size: 26px
+
+    .details
+      color: #959595
+
+  .new_left, .new_right
+    height: 290px
+
+  .new_left
+    border-bottom: 1px solid #dadada
+    border-right: 1px solid #dadada
+    float: left
+    margin: 0 0 0 50px
+    width: 650px
+
+    .form_1
+      margin: 30px 0
+
+      .helper_info
+        margin: 10px 0 0
+        color: #9b9b9b
+
+      .order_delivery_method
+
+      .order_post_address
+        display: none
+
+        input
+          +border-radius(8px)
+          border: 2px solid #e1e1e1
+          font-size: 18px
+          outline: none
+          padding: 10px
+          width: 79%
+
+      div.input
+        margin: 10px 0 0
+
+      div.radio_buttons
+        +clearfix
+        width: 550px
+        font-size: 22px
+
+        span.radio
+          float: left
+          margin: 10px 0 0
+
+    .order_city
+      span.radio
+        font-size: 26px
+        position: absolute
+
+        input
+          margin: 0 10px 0 0
+
+        &:first-child
+          left: 31px
+
+        &:last-child
+          right: 300px
 
   .new_right
     margin: 0
+    border-bottom: 1px solid #dadada
+    width: 450px
+    float: left
 
-    .order_post_address
-      display: none
+    .form_2
+      display: block
+      margin: 40px 0 0
 
-    .order_post_address, .order_post_index, .order_fio
-      margin: 10px 0 !important
+      .helper_info
+        margin: 10px 0 0 32px
+        color: #9b9b9b
 
-      input
-        +border-radius(5px)
-        border: 1px solid #ccc
+      div.order_post_address
+        display: none
+
+    div.input
+      margin: 15px auto
+      width: 390px
+
+      input, textarea
+        +border-radius(8px)
+        border: 2px solid #e1e1e1
+        font-size: 18px
         outline: none
         padding: 10px
-        width: 300px
-
-    .annotation
-      line-height: 25px
-      margin: 0 0 -20px 0
-      white-space: pre-line
-
-      .or
-        font-size: 20px
-        font-weight: bold
-        white-space: normal
-
-      a
-        color: #0055d6
-        text-decoration: none
-
-        &:hover
-          color: #528CE5
-
-    .input
-      margin: 20px 0 0 -5px
+        width: 90%
