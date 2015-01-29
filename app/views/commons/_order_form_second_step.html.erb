@@ -37,5 +37,7 @@
       (<span class="monopode_quantity"><%= quantity %></span> <%= Russian::pluralize(quantity, 'монопод', 'монопода', 'моноподов') %> )
     </div>
   </div>
-  <%= pay_url "Оплатить", id, quantity * t("order.price") + (quantity < 3 ? 150 : 0) , html: { class: 'button js-order-button new_button', target: '_blank', id: id } %>
+  <span class="update_button">
+    <%= render partial: 'commons/order_button', locals: { payment_id: id, summ: quantity * t("order.price")} %>
+  </span>
 <% end %>

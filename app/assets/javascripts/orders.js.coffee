@@ -1,3 +1,15 @@
+perform_ajax = ->
+  $.ajax
+    type: 'post'
+    url: "/update_button"
+    data:
+      id: $('.js-order-button').attr('id')
+      summ: parseInt($('.sum').text())
+
+    success:(response) ->
+      $('.js-order-button').remove()
+      $('.update_button').append(response)
+
 $ ->
   $('#order_phone').inputmask 'mask',
     'mask': '+7-(999)-999-9999'
@@ -18,11 +30,13 @@ $ ->
       sum = parseInt($('.sum').text())
       $('.sum').text(sum + 150)
       $('.details').append('<span class="appended"> + 150 рублей (доставка)</span>')
+      perform_ajax()
 
     if $('.radio_buttons:checked', '.order_delivery_method').val() == 'pickup' && parseInt($('.monopode_quantity').text()) < 3
       sum = parseInt($('.sum').text())
       $('.sum').text(sum - 150)
       $('.appended').remove()
+      perform_ajax()
 
 
   # if Other city was selected
@@ -35,11 +49,13 @@ $ ->
       sum = parseInt($('.sum').text())
       $('.sum').text(sum + 150)
       $('.details').append('<span class="appended"> + 150 рублей (доставка)</span>')
+      perform_ajax()
 
     if $('.radio_buttons:checked', '.order_city').val() == 'tomsk' && parseInt($('.monopode_quantity').text()) < 3 && $('.radio_buttons:checked', '.order_delivery_method').val() == 'pickup'
       sum = parseInt($('.sum').text())
       $('.sum').text(sum - 150)
       $('.appended').remove()
+      perform_ajax()
 
   $('.order_form').on 'click', '.js-order-button', ->
     if $('.radio_buttons:checked', '.order_city').val() == 'tomsk'
@@ -55,11 +71,10 @@ $ ->
     $.ajax
       type: 'post'
       url: "/orders/"+id
-      data: {
+      data:
         _method: 'put'
         id: id
         address: address
-      }
 
       success: ->
         console.log 'success'

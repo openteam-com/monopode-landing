@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:create, :update]
   resources :phone_orders, only: [:create]
 
+  post '/update_button', as: 'update_button', to: 'orders#update_button'
   root to: 'main_page#index'
 end

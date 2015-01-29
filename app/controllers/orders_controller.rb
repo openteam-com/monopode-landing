@@ -24,6 +24,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update_button
+    render partial: 'commons/order_button', locals: { payment_id: params[:id], summ: params[:summ] }
+  end
+
   private
 
   def order_params
