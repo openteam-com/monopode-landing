@@ -239,16 +239,8 @@
       </div>
     </div>
 
-    <div class="overlay" title="окно"></div>
-    <div class="popup">
-      <div class="close_window">x</div>
-      <%= simple_form_for @phone_order, remote: true do |f| %>
-        <%= f.input :full_name, input_html: { class: 'input', placeholder: 'Имя' }, label: false %>
-        <%= f.input :phone, input_html: { class: 'input', placeholder: 'Телефон' }, label: false %>
-        <%= f.submit 'ЗАКАЗАТЬ ЗВОНОК', class: 'button close_button'%>
-      <% end %>
-    </div>
-    <a class="open_window"href="#">хочу чтоб по клику открылось окно</a>
+    <%= render partial: 'commons/modal_window' %>
+
     <%= yield %>
   </body>
 </html>
