@@ -12,6 +12,7 @@ $ ->
   # if Tomsk was selected
   $('.order_form').on 'change', '.order_delivery_method .radio_buttons', ->
     $('.order_post_address', '.form_1').toggle()
+    $('.helper_info', '.form_1').toggle()
 
   # if Other city was selected
   $('.order_form').on 'change', '.order_city .radio_buttons', ->
