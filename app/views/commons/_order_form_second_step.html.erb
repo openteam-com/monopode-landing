@@ -30,11 +30,12 @@
       итого:
     </div>
     <div class="sum">
-      <%= quantity * t("order.price") + (quantity < 3 ? 150 : 0) %> <span class="rubles">рублей</span>
+      <%= quantity * t("order.price")%> <span class="rubles">рублей</span>
     </div>
     <div class="details">
-      <%= quantity * t("order.price") %> (<%= quantity %> <%= Russian::pluralize(quantity, 'монопод', 'монопода', 'моноподов') %>) <%= "+ 150 рублей доставка" if quantity <3 %>
+      <%= quantity * t("order.price") %>
+      (<span class="monopode_quantity"><%= quantity %></span> <%= Russian::pluralize(quantity, 'монопод', 'монопода', 'моноподов') %> )
     </div>
   </div>
-  <%= pay_url "Оплатить", id, quantity, html: { class: 'button js-order-button new_button', target: '_blank', id: id } %>
+  <%= pay_url "Оплатить", id, quantity * t("order.price") + (quantity < 3 ? 150 : 0) , html: { class: 'button js-order-button new_button', target: '_blank', id: id } %>
 <% end %>

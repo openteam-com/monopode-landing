@@ -14,11 +14,32 @@ $ ->
     $('.order_post_address', '.form_1').toggle()
     $('.helper_info', '.form_1').toggle()
 
+    if $('.radio_buttons:checked', '.order_delivery_method').val() == 'delivery' && parseInt($('.monopode_quantity').text()) < 3
+      sum = parseInt($('.sum').text())
+      $('.sum').text(sum + 150)
+      $('.details').append('<span class="appended"> + 150 рублей (доставка)</span>')
+
+    if $('.radio_buttons:checked', '.order_delivery_method').val() == 'pickup' && parseInt($('.monopode_quantity').text()) < 3
+      sum = parseInt($('.sum').text())
+      $('.sum').text(sum - 150)
+      $('.appended').remove()
+
+
   # if Other city was selected
   $('.order_form').on 'change', '.order_city .radio_buttons', ->
     $('.form_1').toggle()
     $('.form_2').toggle()
     $('.order_post_address', '.form_2').toggle() # toggle fake input for address
+
+    if $('.radio_buttons:checked', '.order_city').val() == 'other' && parseInt($('.monopode_quantity').text()) < 3 && !$('.appended').length
+      sum = parseInt($('.sum').text())
+      $('.sum').text(sum + 150)
+      $('.details').append('<span class="appended"> + 150 рублей (доставка)</span>')
+
+    if $('.radio_buttons:checked', '.order_city').val() == 'tomsk' && parseInt($('.monopode_quantity').text()) < 3 && $('.radio_buttons:checked', '.order_delivery_method').val() == 'pickup'
+      sum = parseInt($('.sum').text())
+      $('.sum').text(sum - 150)
+      $('.appended').remove()
 
   $('.order_form').on 'click', '.js-order-button', ->
     if $('.radio_buttons:checked', '.order_city').val() == 'tomsk'
