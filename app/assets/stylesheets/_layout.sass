@@ -99,14 +99,14 @@
       z-index: 10
 
     &.first_block
-      margin-top: 56px
+      margin-top: 70px
 
   .header, .footer
     +clearfix
     background: image-url("logo.png") no-repeat left center
 
     &.limited
-      padding: 20px 0
+      padding: 20px 0 10px
 
     .logo
       display: block
@@ -121,10 +121,30 @@
 
       li
         float: left
-        margin-right: 40px
+        margin: 0 30px 0 0
+        padding: 10px 0 0
+
+        .call_request
+          +border-radius(3px)
+          +inline-block
+          background-color: #ff8420
+          clear: right
+          color: white
+          float: right
+          margin: 3px 0 0
+          padding: 7px 7px 4px
+          text-transform: uppercase
+
+        .phone
+          color: white
+          float: right
+
+        &:last-child
+          margin: -12px 0 0
+          padding: 6px 0 0
 
         a
-          color: white
+          color: #737373
           text-decoration: none
 
   .order

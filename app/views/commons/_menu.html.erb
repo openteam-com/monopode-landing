@@ -1,8 +1,12 @@
-<a class="logo" href="">Selfie.znaigorod.ru</a>
+<%= link_to 'http://Selfie.znaigorod.ru', root_path, class: :logo %>
 <ul class="menu">
   <li><%= link_to 'КАК ЭТО РАБОТАЕТ', '#how_it_works', class: 'js-scroll' %></li>
   <li><%= link_to 'ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ', '#tech_details', class: 'js-scroll'%></li>
-  <li><%= link_to 'ГАРАНТИИ', '#guarantee', class: 'js-scroll'%></li>
   <li><%= link_to 'ДОСТАВКА', '#guarantee', class: 'js-scroll'%></li>
-  <li><%= link_to 'ЗАКАЗАТЬ', '#order_form', class: 'js-scroll'%></li>
+  <li><%= link_to 'ГАРАНТИИ', '#guarantee', class: 'js-scroll'%></li>
+  <li><%= link_to 'ЗАКАЗ', '#order_form', class: 'js-scroll'%></li>
+  <li>
+    <div class='phone'>+7 952 807 24 06</div>
+    <%= link_to 'заказать звонок', '#', class: :call_request %>
+  </li>
 </ul>
