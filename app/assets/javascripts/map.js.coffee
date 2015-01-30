@@ -29,6 +29,8 @@
         left: 10
     zgPlacemark = new ymaps.Placemark([56.4800670145844, 85.00952437484801],
       balloonContentHeader: "Алтайская 161 б стр. 2"
+      balloonContentBody:"<img width='230' height='200' src='http://storage.znaigorod.ru/files/259024/230-200/map_picture.jpg' />"
+
       hintContent: "Алтайская 161 б стр. 2"
     )
 
