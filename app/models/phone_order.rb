@@ -1,4 +1,5 @@
 class PhoneOrder < ActiveRecord::Base
+  validates_presence_of :full_name, :phone
 end
 
 # == Schema Information
