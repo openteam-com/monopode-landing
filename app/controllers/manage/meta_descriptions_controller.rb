@@ -15,6 +15,6 @@ class Manage::MetaDescriptionsController < Manage::ApplicationController
 
   private
   def meta_params
-    params.require(:meta_description).permit(:title, :h1, :keywords, :description, :og_title, :og_description, :introduction, :og_image)
+    params.require(:meta_description).permit(:title, :h1, :keywords, :description, :og_title, :og_description, :introduction, :og_image, :action_text, :action_discount)
   end
 end

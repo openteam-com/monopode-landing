@@ -55,8 +55,16 @@
           </div>
 
           <div class="action_timer">
-            <span class='action'>до конца акции осталось:</span>
+            <div class='action'>до конца акции осталось:</div>
             <div class="countdown"></div>
+          </div>
+
+          <div class="ribbon">
+            <%= @meta_description.action_text %>
+          </div>
+          <div class="action_text">
+            <%= image_tag 'action.png', class: :action_img %>
+            <span class='text_for_img'>Скидка <%= @meta_description.action_discount %>%</span>
           </div>
         </div>
       </div>
