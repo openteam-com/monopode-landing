@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
     if request.xhr?
       order = Order.find(params[:id])
       order.address = params[:address]
+      order.quantity = params[:quantity]
       if order.save
         render nothing: true, status: 200
         Sms.new.send("Заказ №#{params[:id]} на сумму #{order.quantity * t('order.price')} создан.")
@@ -25,7 +26,7 @@ class OrdersController < ApplicationController
   end
 
   def update_button
-    render partial: 'commons/order_button', locals: { payment_id: params[:id], summ: params[:summ] }
+    render partial: 'commons/order_button', locals: { payment_id: params[:id], delivery: params[:delivery], quantity: params[:quantity].to_i }
   end
 
   private

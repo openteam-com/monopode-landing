@@ -1,5 +1,9 @@
-class MetaDescription < ActiveRecord::Base
-  has_attached_file :og_image, :storage => :elvfs, :elvfs_url => Settings['storage.url']
+require 'test_helper'
+
+class MetaDescriptionTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
 
 # == Schema Information
@@ -20,5 +24,4 @@ end
 #  og_image_url          :string(255)
 #  created_at            :datetime
 #  updated_at            :datetime
-#  action_text           :string(255)
-#  action_discount       :string(255)
+#

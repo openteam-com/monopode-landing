@@ -1,16 +1,41 @@
-perform_ajax = ->
+perform_ajax = (delivery) ->
   $.ajax
     type: 'post'
     url: "/update_button"
     data:
       id: $('.js-order-button').attr('id')
-      summ: parseInt($('.sum').text())
+      quantity: parseInt($('.monopode_quantity').text())
+      delivery: delivery
 
     success:(response) ->
-      $('.js-order-button').remove()
-      $('.update_button').append(response)
+      $('.bottom_wrapper').empty()
+      $('.bottom_wrapper').append(response)
+
+price_check = ->
+  if ($('.radio_buttons:checked', '.order_delivery_method').val() == 'delivery' || $('.radio_buttons:checked', '.order_city').val() == 'other') && parseInt($('.monopode_quantity').text()) < 3
+    perform_ajax(true)
+  else
+    perform_ajax(false)
 
 $ ->
+  $('.order_form').on 'click', '.plus', ->
+    number = $('#order_quantity').val()
+    number = parseInt(number) || 1
+    $('.second_form_quantity, #order_quantity').val(number+1)
+    $('.monopode_quantity').text(number+1)
+    price_check() if $('.second_form_quantity').length
+
+  $('.order_form').on 'click', '.minus', ->
+    number = $('#order_quantity').val()
+    number = parseInt(number) || 1
+    if number <= 1
+      number = 1
+    else
+      number -= 1
+    $('.second_form_quantity, #order_quantity').val(number)
+    $('.monopode_quantity').text(number)
+    price_check() if $('.second_form_quantity').length
+
   $('#order_phone').inputmask 'mask',
     'mask': '+7-(999)-999-9999'
 
@@ -25,37 +50,14 @@ $ ->
   $('.order_form').on 'change', '.order_delivery_method .radio_buttons', ->
     $('.order_post_address', '.form_1').toggle()
     $('.helper_info', '.form_1').toggle()
-
-    if $('.radio_buttons:checked', '.order_delivery_method').val() == 'delivery' && parseInt($('.monopode_quantity').text()) < 3
-      sum = parseInt($('.sum').text())
-      $('.sum').text(sum + 150)
-      $('.details').append('<span class="appended"> + 150 рублей (доставка)</span>')
-      perform_ajax()
-
-    if $('.radio_buttons:checked', '.order_delivery_method').val() == 'pickup' && parseInt($('.monopode_quantity').text()) < 3
-      sum = parseInt($('.sum').text())
-      $('.sum').text(sum - 150)
-      $('.appended').remove()
-      perform_ajax()
-
+    price_check()
 
   # if Other city was selected
   $('.order_form').on 'change', '.order_city .radio_buttons', ->
     $('.form_1').toggle()
     $('.form_2').toggle()
     $('.order_post_address', '.form_2').toggle() # toggle fake input for address
-
-    if $('.radio_buttons:checked', '.order_city').val() == 'other' && parseInt($('.monopode_quantity').text()) < 3 && !$('.appended').length
-      sum = parseInt($('.sum').text())
-      $('.sum').text(sum + 150)
-      $('.details').append('<span class="appended"> + 150 рублей (доставка)</span>')
-      perform_ajax()
-
-    if $('.radio_buttons:checked', '.order_city').val() == 'tomsk' && parseInt($('.monopode_quantity').text()) < 3 && $('.radio_buttons:checked', '.order_delivery_method').val() == 'pickup'
-      sum = parseInt($('.sum').text())
-      $('.sum').text(sum - 150)
-      $('.appended').remove()
-      perform_ajax()
+    price_check()
 
   $('.order_form').on 'click', '.js-order-button', ->
     if $('.radio_buttons:checked', '.order_city').val() == 'tomsk'
@@ -75,6 +77,7 @@ $ ->
         _method: 'put'
         id: id
         address: address
+        quantity: $('.number input').val()
 
       success: ->
         console.log 'success'

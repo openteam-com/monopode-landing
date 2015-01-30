@@ -25,19 +25,14 @@
     </div>
 
   </div>
-  <div class="total">
-    <div class="text">
-      итого:
-    </div>
-    <div class="sum">
-      <%= quantity * t("order.price")%> <span class="rubles">рублей</span>
-    </div>
-    <div class="details">
-      <%= quantity * t("order.price") %>
-      (<span class="monopode_quantity"><%= quantity %></span> <%= Russian::pluralize(quantity, 'монопод', 'монопода', 'моноподов') %> )
-    </div>
-  </div>
-  <span class="update_button">
-    <%= render partial: 'commons/order_button', locals: { payment_id: id, summ: quantity * t("order.price")} %>
-  </span>
+
+  <%= content_tag :div, class: [:count, :second_step]  do %>
+    <h3>Количество</h3>
+    <%= content_tag :div, '-', class: :minus %>
+    <%= content_tag :div, class: :number do %> <%= f.input :quantity, as: :string, label: false, input_html: { value: quantity, class: 'second_form_quantity'} %> <% end %>
+    <%= content_tag :div, '+', class: :plus %>
+  <% end %>
+
+  <div class="bottom_wrapper">
+    <%= render partial: 'commons/order_button', locals: { payment_id: id, delivery: false, quantity: quantity } %>
 <% end %>

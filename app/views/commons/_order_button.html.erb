@@ -1,1 +1,16 @@
-<%= pay_url "Оплатить", payment_id, summ, html: { class: 'button js-order-button new_button', target: '_blank', id: payment_id } %>
+<div class="total">
+  <div class="text">
+    итого:
+  </div>
+  <div class="sum">
+    <%= quantity * t("order.price") + (delivery == "true" ? 150 : 0)%> <span class="rubles">рублей</span>
+  </div>
+  <div class="details">
+    <%= quantity * t("order.price") %>
+    (<span class="monopode_quantity"><%= quantity %></span> <%= Russian::pluralize(quantity, 'монопод', 'монопода', 'моноподов') %> )
+    <%= " + 150 рублей (доставка)" if delivery == "true" %>
+  </div>
+</div>
+<span class="update_button">
+  <%= pay_url "Оплатить", payment_id, quantity * t("order.price") +(delivery == "true" ? 150 :0), html: { class: 'button js-order-button new_button', target: '_blank', id: payment_id } %>
+</span>
