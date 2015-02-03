@@ -59,7 +59,7 @@
             <div class="countdown"></div>
           </div>
 
-          <div class="ribbon">
+          <div class='ribbon' data-day="<%= @meta_description.action_text[/\d+/].to_i %>" data-month="<%= Time.zone.now.month.to_i %>">
             <%= @meta_description.action_text %>
           </div>
           <div class="action_text">
