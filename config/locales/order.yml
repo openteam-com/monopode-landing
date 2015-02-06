@@ -1,5 +1,6 @@
 ru:
   order:
     phone: 123-321
-    price: 790
+    price: 5
+    delivery_price: 5
     address: Алтайская 161б, стр. 2
