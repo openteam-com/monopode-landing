@@ -6,7 +6,7 @@
       <!-- if Tomsk was selected -->
       <%= f.input :delivery_method, as: :radio_buttons, label: false %>
       <%= f.input :post_address, label: false, input_html: { placeholder: 'Адрес' } %>
-      <div class="helper_info">Стоимость доставки - 150 рублей.</div>
+      <div class="helper_info">Стоимость доставки - <%= t("order.delivery_price") %> рублей.</div>
       <div class="helper_info">При заказе от 3-х моноподов доставка БЕСПЛАТНО.</div>
     </div>
   </div>
