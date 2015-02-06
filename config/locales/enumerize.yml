@@ -3,6 +3,7 @@ ru:
     city:
       tomsk: Томск
       other: Другой город
+
     delivery_method:
       pickup: Забрать самостоятельно на Алтайской 161/б, стр. 2
       delivery: Доставка

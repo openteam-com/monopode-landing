@@ -20,5 +20,6 @@ end
 #  og_image_url          :string(255)
 #  created_at            :datetime
 #  updated_at            :datetime
-#  action_text           :string(255)
-#  action_discount       :string(255)
+#  action_date_day       :integer
+#  action_discount       :integer
+#
