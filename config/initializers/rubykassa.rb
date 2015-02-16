@@ -5,7 +5,7 @@ Rubykassa.configure do |config|
   config.login = Settings['robokassa.login']
   config.first_password = Settings['robokassa.secret_1']
   config.second_password = Settings['robokassa.secret_2']
-  config.mode = :test # or :production
+  config.mode = :production
   config.http_method = :get # or :post
   config.xml_http_method = :get # or :post
   config.result_callback = ->(notification) { render text: notification.success }
