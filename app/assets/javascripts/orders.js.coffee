@@ -66,7 +66,7 @@ $ ->
       else
         address = $('.order_post_address input', '.form_1').val()
     else
-      address = $('.order_post_index input', '.form_2').val() + ', ' + $('.order_post_address input', '.form_2').val() + ', ' + $('.order_fio input', '.form_2').val()
+      address = $('.order_post_index input', '.form_2').val() + ', ' + $('.order_post_address textarea', '.form_2').val() + ', ' + $('.order_fio input', '.form_2').val()
 
     id = $('.js-order-button').attr('id')
 
